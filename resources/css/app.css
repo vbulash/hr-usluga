@@ -8,9 +8,31 @@
     line-height: 104%;
     color: #663366;
   }
+
   h2 {
     @apply font-normal text-5xl uppercase pb-4;
     line-height: 104%;
     color: #663366;
   }
+}
+
+ul.intro {
+    list-style-image: url('/assets/images/list-intro.png');
+}
+
+section.intro {
+    background-image: url("/assets/images/backgroud1.png");
+    background-position: right top 20px;
+    background-size: 48%;
+}
+
+div.card-body ul {
+    list-style-image: url('/assets/images/list-check.png');
+    list-style-position: outside;
+    margin-left: 57px;
+}
+
+div.card-body ul li::marker {
+    font-size: 24px;
+    line-height: 24px;
 }

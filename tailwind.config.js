@@ -10,6 +10,12 @@ module.exports = {
     ],
 
     theme: {
+        colors: {
+            'black': '#000000',
+            'white': '#ffffff',
+            'primary': '#663366',
+            'tag': '#D0CDE1',
+        },
         extend: {
             fontFamily: {
                 sans: ['Gilroy', ...defaultTheme.fontFamily.sans],

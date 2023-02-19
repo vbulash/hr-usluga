@@ -22,6 +22,9 @@
         "vite-plugin-fonts": "^0.7.0"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.3.0",
+        "@fortawesome/free-solid-svg-icons": "^6.3.0",
+        "@fortawesome/react-fontawesome": "^0.2.0",
         "@fullcalendar/core": "^6.1.1",
         "@fullcalendar/daygrid": "^6.1.1",
         "@fullcalendar/list": "^6.1.1",

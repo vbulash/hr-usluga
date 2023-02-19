@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Pages\BodyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +18,12 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Body');
+Route::get('/', [BodyController::class, 'index']);
+
+Route::get('/services', function () {
+    return Inertia::render('Services');
 });
+Route::get('/service/{service}', [ServiceController::class, 'show']);
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
