@@ -56,7 +56,7 @@ export default function BodyFooter({ active }) {
                 <div className="col-start-2 col-span-10">
                     <footer className='my-6 flex justify-between'>
                         <p className='text-lg font-bold text-white'>&copy; 2023 HR-Услуга. Все права защищены. | Сайт создан студией <a href="https://bulash.ru" className='underline underline-offset-4'>Bulash.ru</a></p>
-                        <p className='text-lg font-normal text-white underline underline-offset-4'><a href='#'>Политика обработки персональных данных</a></p>
+                        <p className='text-lg font-normal text-white underline underline-offset-4'><a href='/persdata'>Политика обработки персональных данных</a></p>
                     </footer>
                 </div>
             </div>

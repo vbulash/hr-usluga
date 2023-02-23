@@ -36,3 +36,23 @@ div.card-body ul li::marker {
     font-size: 24px;
     line-height: 24px;
 }
+
+.document {
+    @apply text-2xl;
+}
+
+.document h4 {
+    @apply mb-5 text-3xl text-primary;
+}
+
+.document p {
+    @apply mb-5;
+}
+
+.document strong {
+    @apply text-primary;
+}
+
+.document a {
+    @apply underline;
+}

@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\ServiceController;
 */
 
 Route::post('/services', [ServiceController::class, 'getServices']);
+Route::post('/services.slug/{slug}', [ServiceController::class, 'getBySlug']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

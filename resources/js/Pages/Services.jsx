@@ -2,6 +2,7 @@ import BodyHeader from '@/Components/BodyHeader';
 import BodyFooter from '@/Components/BodyFooter';
 import ServiceCard from '@/Components/ServiceCard';
 import { useState, useEffect } from 'react';
+import Toast from '@/Components/Toast';
 
 export default function Services(props) {
     const [services, setServices] = useState([]);
@@ -35,12 +36,14 @@ export default function Services(props) {
                     <div className="col-start-2 col-span-10 gap-5 flex flex-row flex-wrap grow-0 shrink-0 mb-12">
                         {
                             services.map(service => (
-                                <ServiceCard card={service} />
+                                <ServiceCard card={service} key={service.slug} />
                             ))
                         }
                     </div>
                 </div >
             </section >
+
+            <Toast />
 
             <BodyFooter active="Услуги" />
         </>

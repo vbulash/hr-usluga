@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 use App\Models\Service;
+use Illuminate\Support\Facades\DB;
+use stdClass;
 
 class ServiceController extends BaseModuleController {
     protected $moduleName = 'services';
@@ -40,6 +42,17 @@ class ServiceController extends BaseModuleController {
                 ];
             });
         return response($services, 200);
+    }
+
+    public function getBySlug(string $slug): ?stdClass {
+        $query = DB::select(<<<'EOS'
+select services.*
+from services, service_slugs
+where service_slugs.service_id = services.id and service_slugs.active = 1 and service_slugs.slug = :slug
+EOS,
+            ['slug' => $slug]
+        );
+        return count($query) == 0 ? null : $query[0];
     }
 
     public function show($id, $submoduleId = null) {

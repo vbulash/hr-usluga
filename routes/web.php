@@ -34,6 +34,8 @@ Route::get('/service/{service}', [ServiceController::class, 'show']);
 //     ]);
 // });
 
+Route::get('/persdata', fn() => Inertia::render('Documents/PersData'));
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

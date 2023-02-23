@@ -27,11 +27,7 @@ export default function ServiceCard(props) {
                     <span className='text-3xl font-black'>{props.card.price}</span>&nbsp;
                     <span className='text-2xl'>&#8381;</span>
                 </div>
-                {/* <a href={"/card/" + props.card.slug}
-                    className='bg-primary w-52 h-14 flex justify-center items-center font-bold text-white text-lg rounded-bl-xl rounded-tr-xl'>
-                    Заказать
-                </a> */}
-                <ServiceOrder service={props.card.slug} />
+                <ServiceOrder slug={props.card.slug} />
             </div>
         </div>
 

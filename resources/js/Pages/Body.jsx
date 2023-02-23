@@ -4,6 +4,7 @@ import Socials from '@/Components/Socials';
 import WaveSeparator from '@/Components/WaveSeparator';
 import ServiceCard from '@/Components/ServiceCard';
 import { useState, useEffect } from 'react';
+import Toast from '@/Components/Toast';
 
 export default function Body(props) {
     const [services, setServices] = useState([]);
@@ -64,6 +65,8 @@ export default function Body(props) {
                     </div>
                 </div>
             </section>
+
+            <Toast />
             <BodyFooter active="Главная" />
         </>
     );
