@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
+use App\Mail\OrderService;
 use App\Models\Service;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use stdClass;
 
 class ServiceController extends BaseModuleController {
@@ -53,6 +56,12 @@ EOS,
             ['slug' => $slug]
         );
         return count($query) == 0 ? null : $query[0];
+    }
+
+    public function order(Request $request) {
+        $order = (object) $request->all();
+        Mail::to($request->email)->send(new OrderService($order));
+        return true;
     }
 
     public function show($id, $submoduleId = null) {

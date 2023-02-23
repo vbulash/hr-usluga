@@ -35,6 +35,8 @@ Route::get('/service/{service}', [ServiceController::class, 'show']);
 // });
 
 Route::get('/persdata', fn() => Inertia::render('Documents/PersData'));
+Route::get('/privacy.policy', fn() => Inertia::render('Documents/PrivacyPolicy'));
+Route::get('/terms.of.use', fn() => Inertia::render('Documents/TermsOfUse'));
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

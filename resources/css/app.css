@@ -42,7 +42,11 @@ div.card-body ul li::marker {
 }
 
 .document h4 {
-    @apply mb-5 text-3xl text-primary;
+    @apply mb-5 text-3xl font-bold text-primary;
+}
+
+.document h5 {
+    @apply mb-4 text-2xl font-semibold text-primary;
 }
 
 .document p {
@@ -54,5 +58,13 @@ div.card-body ul li::marker {
 }
 
 .document a {
-    @apply underline;
+    @apply text-primary underline;
+}
+
+.document ul {
+    @apply list-disc list-inside;
+}
+
+.document ul li {
+    @apply pb-2;
 }

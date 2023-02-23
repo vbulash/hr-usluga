@@ -63,15 +63,41 @@ export default class ServiceOrder extends React.Component {
 
         //
         if (valid) {
-            const order = {
-                service: this.service,
-                fio: fio.value,
-                email: email.value,
-                phone: phone.value,
-                resume: (resume.files.length > 0 ? resume.files : null)
-            };
-            // TODO переслать запрос
-            this.hide();
+            const order = new FormData();
+            order.append('service', this.service);
+            order.append('fio', fio.value);
+            order.append('email', email.value);
+            order.append('phone', phone.value);
+            if (resume.files.length > 0) {
+                let index = 0;
+                for (const file of resume.files)
+                    order.append('resume_' + index++, file);
+            }
+
+            fetch('/api/services.order', {
+                method: 'POST',
+                body: order,
+            }).then(response => {
+                if (response.ok) {
+                    window.toast.show('success',
+                        `
+                            Письмо-заказ услуги &laquo;${this.service}&raquo; отправлено.<br/>
+                            Мы свяжемся с вами по указанным в форме заказа контактным данным.
+                        `
+                    );
+                    this.hide();
+                } else {
+                    window.toast.show('error',
+                        `
+                        Ошибка отправки письма с заказом услуги &laquo;${this.service}&raquo;:
+                        <ul class="list-disc list-inside">
+                            <li class="pl-4">Код ошибки: ${response.status}</li>
+                            <li class="pl-4">Текст ошибки: ${response.statusText}</li>
+                        </ul>
+                        `
+                    );
+                }
+            });
         } else {
             const message = errors.join("\n");
             window.toast.show('error', message);
@@ -129,8 +155,8 @@ export default class ServiceOrder extends React.Component {
                                             {
                                                 [
                                                     ['checkPdd', 'Я даю согласие на обработку моих персональных данных в соответствии с действующим законодательством Российской Федерации и <a href="/persdata" target="_blank" class="text-primary underline">Политикой обработки персональных данных</a>'],
-                                                    ['checkConfidential', 'Я подтверждаю ознакомление с Политикой обеспечения конфиденциальности информации'],
-                                                    ['checkAgreement', 'Я ознакомлен(а) с и обязуюсь соблюдать Пользовательское соглашение']
+                                                    ['checkConfidential', 'Я подтверждаю ознакомление с <a href="/privacy.policy" target="_blank" class="text-primary underline">Политикой обеспечения конфиденциальности информации</a>'],
+                                                    ['checkAgreement', 'Я ознакомлен(а) с и обязуюсь соблюдать <a href="/terms.of.use" target="_blank" class="text-primary underline">Пользовательское соглашение</a>']
                                                 ].map(([id, title]) => (
                                                     <div className="form-check flex flex-row flex-nowrap gap-x-2 mb-4 items-start">
                                                         <input className="form-check-input appearance-none mt-1 h-4 w-4 rounded-sm bg-white text-black checked:bg-primary focus:outline-none" type="checkbox" value="" id={id} name={id} />
@@ -144,7 +170,7 @@ export default class ServiceOrder extends React.Component {
                                         Вышлите своё резюме, если оно есть, для предварительного ознакомления (можно вложить 1 файл размером не более 5 MB)
                                     </div>
                                     <div className="mb-8 text-primary text-lg font-bold">
-                                        <input type="file" name="resume" id="resume" />
+                                        <input type="file" name="resume" id="resume" className="outlie-0 focus:outline-0" multiple />
                                     </div>
                                     {/*footer*/}
                                     <div className="flex items-center justify-start">
