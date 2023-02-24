@@ -38,12 +38,18 @@ export default class ServiceOrder extends React.Component {
         const checkAgreement = document.getElementById('checkAgreement');
         const resume = document.getElementById('resume');
 
-        if (!fio.value) inputs.push('Имя и фамилия');
-        if (!email.value) inputs.push('Электронная почта');
-        if (!phone.value) inputs.push('Телефон для связи');
+        if (!fio.value) inputs.push('Имя и фамилия - <strong>не заполнено</strong>');
+        if (email.value) {
+            if (!String(email.value)
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                )) inputs.push('Электронная почта - <strong>заполнено, некорректное значение</strong>');
+        } else inputs.push('Электронная почта - <strong>не заполнено</strong>');
+        if (!phone.value) inputs.push('Телефон для связи - <strong>не заполнено</strong>');
         let valid = inputs.length == 0;
         if (!valid) {
-            errors.push('Необходимо заполнить поля:');
+            errors.push('Необходимо корректно заполнить поля:');
             errors.push('<ul class="list-disc list-inside">');
             inputs.map(error => { errors.push(`<li class="pl-4">${error}</li>`) });
             errors.push("</ul>\n");
@@ -127,7 +133,7 @@ export default class ServiceOrder extends React.Component {
                                 {/*content*/}
                                 <div className="p-14 relative bg-white rounded-xl shadow-xl flex flex-col">
                                     {/*header*/}
-                                    <div className="flex items-start justify-between pb-9">
+                                    <div className="flex items-start justify-between gap-5 pb-9">
                                         <div className="text-4xl font-bold text-primary">
                                             Анкета-запрос по услуге &laquo;{this.service}&raquo;
                                         </div>
