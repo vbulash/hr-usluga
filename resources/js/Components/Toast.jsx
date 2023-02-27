@@ -20,19 +20,19 @@ export default class Toast extends React.Component {
     }
 
     render() {
-        let background = 'bg-success';
+        let background = 'bg-green-700';
         switch (this.type) {
             case 'success':
-                background = 'bg-success';
+                background = 'bg-green-700';
                 break;
             case 'info':
-                background = 'bg-info';
+                background = 'bg-blue-700';
                 break;
             case 'error':
-                background = 'bg-error';
+                background = 'bg-red-700';
                 break;
             default:
-                background = 'bg-success';
+                background = 'bg-green-700';
         }
 
         return (

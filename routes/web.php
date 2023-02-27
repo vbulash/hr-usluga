@@ -23,7 +23,11 @@ Route::get('/', [BodyController::class, 'index']);
 Route::get('/services', function () {
     return Inertia::render('Services');
 });
-Route::get('/service/{service}', [ServiceController::class, 'show']);
+Route::get('/service/{slug}', function ($slug) {
+    return Inertia::render('ServicePage', [
+        'slug' => $slug
+    ]);
+});
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [

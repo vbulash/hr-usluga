@@ -36,7 +36,7 @@ export default function Services(props) {
                     <div className="col-start-2 col-span-10 gap-5 flex flex-row flex-wrap grow-0 shrink-0 mb-12">
                         {
                             services.map(service => (
-                                <ServiceCard card={service} key={service.slug} />
+                                <ServiceCard card={service} short={false} key={service.slug} />
                             ))
                         }
                     </div>

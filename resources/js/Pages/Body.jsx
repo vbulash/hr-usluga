@@ -5,6 +5,7 @@ import WaveSeparator from '@/Components/WaveSeparator';
 import ServiceCard from '@/Components/ServiceCard';
 import { useState, useEffect } from 'react';
 import Toast from '@/Components/Toast';
+import ServiceSection from '@/Components/ServiceSection';
 
 export default function Body(props) {
     const [services, setServices] = useState([]);
@@ -61,7 +62,8 @@ export default function Body(props) {
                 <WaveSeparator />
                 <div className="grid grid-cols-12 gap-4">
                     <div className="col-start-2 col-span-9">
-                        <h1>Услуги</h1>
+                        <h1 className='mb-12'>Услуги</h1>
+                        <ServiceSection />
                     </div>
                 </div>
             </section>

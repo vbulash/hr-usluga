@@ -27,6 +27,7 @@ class OrderService extends Mailable {
             'fio' => $order->fio,
             'email' => $order->email,
             'phone' => $order->phone,
+            'promo' => $order->promo,
             'files' => null
         ];
         $files = [];

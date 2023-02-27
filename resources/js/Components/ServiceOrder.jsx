@@ -5,6 +5,7 @@ export default class ServiceOrder extends React.Component {
     constructor(props) {
         super(props);
         this.state = { show: false };
+        this.button = props.button;
         this.service = '';
         // Получить this.service по слагу this.props.slug
         fetch('/api/services.slug/' + this.props.slug, {
@@ -33,6 +34,7 @@ export default class ServiceOrder extends React.Component {
         const fio = document.getElementById('fio');
         const email = document.getElementById('email');
         const phone = document.getElementById('phone');
+        const promo = document.getElementById('promo');
         const checkPdd = document.getElementById('checkPdd');
         const checkConfidential = document.getElementById('checkConfidential');
         const checkAgreement = document.getElementById('checkAgreement');
@@ -74,6 +76,7 @@ export default class ServiceOrder extends React.Component {
             order.append('fio', fio.value);
             order.append('email', email.value);
             order.append('phone', phone.value);
+            order.append('promo', promo.value);
             if (resume.files.length > 0) {
                 let index = 0;
                 for (const file of resume.files)
@@ -119,8 +122,10 @@ export default class ServiceOrder extends React.Component {
         return (
             <>
                 <button type="button" onClick={() => this.show()}
-                    className='bg-primary w-52 h-14 flex justify-center items-center font-bold text-white text-lg rounded-bl-xl rounded-tr-xl'
-                    data-bs-toggle="modal" data-bs-target="#orderModal"
+                    className={
+                        this.button ? this.button :
+                            'bg-primary w-52 h-14 flex justify-center items-center font-bold text-white text-lg rounded-bl-xl rounded-tr-xl'
+                    }
                 >
                     Заказать
                 </button>
@@ -153,7 +158,10 @@ export default class ServiceOrder extends React.Component {
                                             <div className="mb-9">
                                                 <FloatingLabelInput type='email' name='email' children='Электронная почта' />
                                             </div>
-                                            <FloatingLabelInput type='text' name='phone' children='Телефон для связи' />
+                                            <div className="mb-12">
+                                                <FloatingLabelInput type='text' name='phone' children='Телефон для связи' />
+                                            </div>
+                                            <FloatingLabelInput type='text' name='promo' children='У меня есть промокод для скидки по заказу' />
                                         </div>
                                         <div className="w-3/5">
                                             <p className="mb-4 text-lg font-bold text-black">Чтобы заполнить анкету для заказа услуги и выполнить её оплату, отметьте все пункты ниже:</p>

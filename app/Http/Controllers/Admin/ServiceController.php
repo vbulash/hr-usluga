@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 use App\Mail\OrderService;
 use App\Models\Service;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Inertia\Inertia;
 use stdClass;
 
 class ServiceController extends BaseModuleController {
@@ -55,17 +57,28 @@ where service_slugs.service_id = services.id and service_slugs.active = 1 and se
 EOS,
             ['slug' => $slug]
         );
-        return count($query) == 0 ? null : $query[0];
+        if (count($query) == 0)
+            return null;
+        $id = $query[0]->id;
+
+        $service = Service::findOrFail($id);
+        $tags = [];
+        foreach ($service->tags as $tag) {
+            $tags[] = $tag->name;
+        }
+        return (object) [
+            'id' => $service->getKey(),
+            'slug' => $service->getSlug(),
+            'tags' => $tags,
+            'title' => $service->title,
+            'description' => $service->description,
+            'price' => $service->price,
+        ];
     }
 
     public function order(Request $request) {
         $order = (object) $request->all();
         Mail::to($request->email)->send(new OrderService($order));
         return true;
-    }
-
-    public function show($id, $submoduleId = null) {
-        // TODO идентифицировать модель service по slug ($id)
-        return $id;
     }
 }
