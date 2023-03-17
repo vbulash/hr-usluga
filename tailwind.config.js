@@ -51,8 +51,13 @@ module.exports = {
                 sans: ['Gilroy', ...defaultTheme.fontFamily.sans],
             },
             backgroundImage: {
-                'service-background': "url('/assets/images/service-background.png')",
-            }
+            },
+            screens: {
+                'xs': '320px',
+                //     'tablet': '1000px',
+                //     'laptop': '1366px',
+                //     'desktop': '1900px',
+            },
         },
     },
 

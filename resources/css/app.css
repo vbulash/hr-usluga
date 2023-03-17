@@ -4,13 +4,13 @@
 
 @layer base {
   h1 {
-    @apply font-black text-7xl uppercase py-2.5;
+    @apply font-black xs:max-lg:text-3xl lg:text-7xl uppercase py-2.5;
     line-height: 104%;
     color: #663366;
   }
 
   h2 {
-    @apply font-normal text-5xl uppercase pb-4;
+    @apply font-normal xs:max-lg:text-2xl lg:text-5xl uppercase pb-4;
     line-height: 104%;
     color: #663366;
   }

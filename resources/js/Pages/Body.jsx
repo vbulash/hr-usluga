@@ -29,7 +29,7 @@ export default function Body(props) {
             <BodyHeader active="Главная"> </BodyHeader>
 
             {/* Секция HR-Услуга */}
-            <section className='intro bg-contain bg-no-repeat'>
+            <section className='intro lg:bg-contain lg:bg-no-repeat'>
                 <div className="grid grid-cols-12 gap-4">
                     <div className="col-start-2 col-span-10">
                         <h1>HR-Услуга</h1>

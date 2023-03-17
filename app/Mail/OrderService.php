@@ -63,7 +63,10 @@ class OrderService extends Mailable {
     public function content() {
         return new Content(
             view: 'mail.order',
-            with: ['order' => $this->order],
+            with: [
+                'order' => $this->order,
+                'ending' => (isset($this->order->files) ? $this->ending(count($this->order->files)) : '')
+            ],
         );
     }
 
@@ -74,5 +77,19 @@ class OrderService extends Mailable {
      */
     public function attachments() {
         return $this->order->files;
+    }
+
+    private function ending(int $files) {
+        $letter = '';
+        if (($files < 10) || ($files > 20)) {
+            $letter .= match ($files % 10) {
+                1 => 'файл',
+                2, 3, 4 => 'файла',
+                default => 'файлов',
+            };
+        } else
+            $letter .= 'файлов';
+
+        return $letter;
     }
 }

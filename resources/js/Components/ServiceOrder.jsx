@@ -113,12 +113,7 @@ export default class ServiceOrder extends React.Component {
         }
     }
 
-    componentDidMount() {
-        console.log('componentDidMount');
-    }
-
     render() {
-        console.log('render');
         return (
             <>
                 <button type="button" onClick={() => this.show()}
