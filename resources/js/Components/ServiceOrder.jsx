@@ -1,4 +1,5 @@
 import React from "react";
+import { createPortal } from "react-dom";
 import FloatingLabelInput from "./FloatingLabelInput";
 
 export default class ServiceOrder extends React.Component {
@@ -125,28 +126,50 @@ export default class ServiceOrder extends React.Component {
                     Заказать
                 </button>
 
-                {this.state.show ? (
+                {this.state.show ? createPortal(
                     <>
                         <div
-                            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none grid grid-cols-12 bg-primary bg-opacity-40">
-                            <div className="relative my-6 mx-auto col-start-2 col-end-11">
+                            className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none grid grid-cols-12 bg-primary bg-opacity-40">
+                            <div className="relative xs:my-3 sm:my-6 xs:max-sm:mx-3 sm:mx-auto xs:max-sm:col-start-1 xs:max-sm:col-end-12 sm:col-start-2 sm:col-end-11">
                                 {/*content*/}
-                                <div className="p-14 relative bg-white rounded-xl shadow-xl flex flex-col">
+                                <div className="xs:p-3 sm:p-9 md:p-14 relative bg-white rounded-xl shadow-xl flex flex-col">
                                     {/*header*/}
                                     <div className="flex items-start justify-between gap-5 pb-9">
-                                        <div className="text-4xl font-bold text-primary">
+                                        <div className="xs:text-3xl sm:text-4xl font-bold text-primary">
                                             Анкета-запрос по услуге &laquo;{this.service}&raquo;
                                         </div>
                                         <button
-                                            className="p-0 bg-transparent border-0 text-black text-6xl leading-none outline-none focus:outline-none hover:text-primary"
+                                            className="p-0 bg-transparent border-0 text-black xs:text-4xl sm:text-6xl leading-none outline-none focus:outline-none hover:text-primary"
                                             onClick={() => this.hide()}
                                         >
                                             &times;
                                         </button>
                                     </div>
                                     {/*body*/}
-                                    <div className="flex flex-row items-start justify-between gap-x-9">
-                                        <div className="mt-1.5 w-2/5">
+                                    <div className="flex xs:flex-col sm:flex-row items-start justify-between xs:gap-y-9 sm:gap-x-9">
+                                        <div className="hidden xs:max-md:block">
+                                            <div className="mb-4 mx-auto">
+                                                <label htmlFor="fio">Имя и фамилия</label>
+                                                <input type="text" name="fio" id='fio'
+                                                    className="mt-2 w-full outline-none rounded bg-transparent text-base p-2 focus:border-primary" />
+                                            </div>
+                                            <div className="mb-4 mx-auto">
+                                                <label htmlFor="email">Электронная почта</label>
+                                                <input type="email" name="email" id='email'
+                                                    className="mt-2 w-full outline-none rounded bg-transparent text-base p-2 focus:border-primary" />
+                                            </div>
+                                            <div className="mb-9 mx-auto">
+                                                <label htmlFor="phone">Телефон для связи</label>
+                                                <input type="text" name="phone" id='phone'
+                                                    className="mt-2 w-full outline-none rounded bg-transparent text-base p-2 focus:border-primary" />
+                                            </div>
+                                            <div className="mx-auto">
+                                                <label htmlFor="promo">Промокод для скидки</label>
+                                                <input type="text" name="promo" id='promo'
+                                                    className="mt-2 w-full outline-none rounded bg-transparent text-base p-2 focus:border-primary" />
+                                            </div>
+                                        </div>
+                                        <div className="hidden md:block mt-1.5 w-2/5">
                                             <div className="mb-9">
                                                 <FloatingLabelInput type='text' name='fio' children='Имя и фамилия' />
                                             </div>
@@ -158,7 +181,7 @@ export default class ServiceOrder extends React.Component {
                                             </div>
                                             <FloatingLabelInput type='text' name='promo' children='У меня есть промокод для скидки по заказу' />
                                         </div>
-                                        <div className="w-3/5">
+                                        <div className="md:w-3/5">
                                             <p className="mb-4 text-lg font-bold text-black">Чтобы заполнить анкету для заказа услуги и выполнить её оплату, отметьте все пункты ниже:</p>
 
                                             {
@@ -179,7 +202,7 @@ export default class ServiceOrder extends React.Component {
                                         Вышлите своё резюме, если оно есть, для предварительного ознакомления (можно вложить 1 файл размером не более 5 MB)
                                     </div>
                                     <div className="mb-8 text-primary text-lg font-bold">
-                                        <input type="file" name="resume" id="resume" className="outlie-0 focus:outline-0" multiple />
+                                        <input type="file" name="resume" id="resume" className="outline-0 focus:outline-0" multiple />
                                     </div>
                                     {/*footer*/}
                                     <div className="flex items-center justify-start">
@@ -194,8 +217,10 @@ export default class ServiceOrder extends React.Component {
                                 </div>
                             </div>
                         </div>
-                    </>
-                ) : null}
+                    </>,
+                    document.body
+                ) : null
+                }
             </>
         )
     }

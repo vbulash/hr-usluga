@@ -43,7 +43,7 @@ export default class Toast extends React.Component {
                             style={{ zIndex: 200 }}>
                             <div
                                 className={
-                                    "fixed w-[460px] px-8 py-6 rounded-xl shadow-lg bottom-6 right-6 text-white text-semibold " +
+                                    "fixed sm:w-[460px] xs:px-8 xs:py-6 sm:px-8 sm:py-6 rounded-xl shadow-lg xs:bottom-6 xs:max-sm:left-6 xs:right-6 sm:bottom-6 sm:right-6 text-white text-semibold " +
                                     background +
                                     " flex flex-row items-start justify-between gap-4"
                                 }

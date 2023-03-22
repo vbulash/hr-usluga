@@ -2,12 +2,12 @@ import ServiceOrder from "./ServiceOrder";
 
 export default function ServiceCard({ card, short = false }) {
     return (
-        <div className="w-[360px] min-w-[360px] shadow-lg rounded-xl mb-11 flex flex-col justify-between">
+        <div className="xs:w-[300px] xs:min-w-[300px] sm:w-[360px] sm:min-w-[360px] shadow-lg rounded-xl mb-11 flex flex-col justify-between">
             <div>
                 <div className="card-header
                                     flex justify-center items-center
-                                            rounded-xl bg-primary shadow-md h-[128px] grow-0
-                                            text-white text-3xl font-black text-center uppercase leading-10" key={card.id}>
+                                            rounded-xl bg-primary shadow-md xs:h-[100px] sm:h-[128px] grow-0
+                                            text-white xs:text-2xl sm:text-3xl font-black text-center uppercase leading-10" key={card.id}>
                     {card.title}
                 </div>
                 <div className='flex flex-col items-center mt-3.5 mb-6 grow-0'>
@@ -21,7 +21,7 @@ export default function ServiceCard({ card, short = false }) {
                 </div>
                 {short ? null :
                     (
-                        <div className='card-body mr-4 mb-5 grow-1'
+                        <div className='card-body mr-4 mb-5 grow-1 xs:text-sm sm:text-base'
                             dangerouslySetInnerHTML={{ __html: card.description }} />
                     )
                 }

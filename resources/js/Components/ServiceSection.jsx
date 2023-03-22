@@ -40,7 +40,7 @@ export default function ServiceSection() {
             <section>
                 <div>
                     <p className="font-normal mb-5">
-                        Вы можете прокрутить список услуг мышью или с клавиатуры (клик мышью внутри области карточек услуг + клавиши &laquo;влево&raquo; и &laquo;вправо&raquo;).<br />
+                        Не все наши услуги видны на одном экране! Воспользуйтесь кнопками со стрелками ниже для просмотра и заказа наших услуг.<br />
                         Кнопка &laquo;Подробнее об услуге&raquo; открывает страницу услуги с более подробным описанием.<br />
                         Кнопка &laquo;Заказать&raquo; приведет вас на форму анкеты для заказа услуги.
                     </p>
@@ -50,7 +50,7 @@ export default function ServiceSection() {
                             spaceBetween={16}
                             loop={true}
                             breakpoints={{
-                                452: {
+                                380: {
                                     slidesPerView: 1
                                 },
                                 903: {
@@ -74,7 +74,7 @@ export default function ServiceSection() {
                         </Swiper>
                     </div>
 
-                    <div className="flex flex-row justify-between">
+                    <div className="flex xs:flex-col-reverse sm:flex-row xs:gap-y-4 justify-between">
                         <a href='/services' className='px-7 py-3.5 rounded-xl bg-primary text-white text-lg font-bold'>
                             Посмотреть все услуги
                         </a>
