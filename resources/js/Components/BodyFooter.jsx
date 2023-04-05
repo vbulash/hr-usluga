@@ -20,9 +20,7 @@ export default function BodyFooter({ active }) {
                         <p>Реквизиты и ссылки на важные документы здесь.</p>
                     </div>
                     <div className="md:w-[30%] lg:w-[18%]">
-                        <a href="http://qrcoder.ru" target="_blank">
-                            <img src="http://qrcoder.ru/code/?BEGIN%3AVCARD%0AN%3A%C1%F3%EB%E0%F8%3B%CD%E0%F2%E0%EB%FC%FF%0ATEL%3A%2B79031009633%0AURL%3Ahttps%3A%2F%2Fhr-usluga.ru%0AEMAIL%3Ainfo%40hr-usluga.ru%0ANOTE%3A%CA%EE%ED%F1%F3%EB%FC%F2%E0%ED%F2+%EF%EE+%F3%EF%F0%E0%E2%EB%E5%ED%E8%FE+%EF%E5%F0%F1%EE%ED%E0%EB%EE%EC+%E8+%EA%E0%F0%FC%E5%F0%ED%EE%EC%F3+%F0%E0%E7%E2%E8%F2%E8%FE%0AEND%3AVCARD&3&0" width="207" height="207" border="0" title="QR код" />
-                        </a>
+                        <img src="{{ asset('images/qr_natalya_bulash.png') }}" alt="" />
                         <div className="flex flex-col space-y-1.5 text-sm ml-2">
                             <a href="tel:+79031009633" className='hover:text-primary hover:underline hover:underline-offset-4'><FontAwesomeIcon icon={faPhone} /> +7 (903) 100-96-33</a>
                             <a href="mailto:info@hr-usluga.ru" className='hover:text-primary hover:underline hover:underline-offset-4'><FontAwesomeIcon icon={faEnvelope} /> info@hr-usluga.ru</a>

@@ -146,8 +146,8 @@ export default class ServiceOrder extends React.Component {
                                         </button>
                                     </div>
                                     {/*body*/}
-                                    <div className="flex xs:flex-col sm:flex-row items-start justify-between xs:gap-y-9 sm:gap-x-9">
-                                        <div className="hidden xs:max-md:block">
+                                    <div className="flex xs:flex-col lg:flex-row items-start justify-between xs:gap-y-9 sm:gap-x-9">
+                                        <div className="hidden xs:max-lg:block">
                                             <div className="mb-4 mx-auto">
                                                 <label htmlFor="fio">Имя и фамилия</label>
                                                 <input type="text" name="fio" id='fio'
@@ -169,7 +169,7 @@ export default class ServiceOrder extends React.Component {
                                                     className="mt-2 w-full outline-none rounded bg-transparent text-base p-2 focus:border-primary" />
                                             </div>
                                         </div>
-                                        <div className="hidden md:block mt-1.5 w-2/5">
+                                        <div className="hidden lg:block mt-1.5 w-2/5">
                                             <div className="mb-9">
                                                 <FloatingLabelInput type='text' name='fio' children='Имя и фамилия' />
                                             </div>
@@ -179,9 +179,9 @@ export default class ServiceOrder extends React.Component {
                                             <div className="mb-12">
                                                 <FloatingLabelInput type='text' name='phone' children='Телефон для связи' />
                                             </div>
-                                            <FloatingLabelInput type='text' name='promo' children='У меня есть промокод для скидки по заказу' />
+                                            <FloatingLabelInput type='text' name='promo' children='Промокод для скидки' />
                                         </div>
-                                        <div className="md:w-3/5">
+                                        <div className="lg:w-3/5">
                                             <p className="mb-4 text-lg font-bold text-black">Чтобы заполнить анкету для заказа услуги и выполнить её оплату, отметьте все пункты ниже:</p>
 
                                             {

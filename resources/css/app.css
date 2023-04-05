@@ -20,12 +20,6 @@ ul.intro {
     list-style-image: url('/assets/images/list-intro.png');
 }
 
-section.intro {
-    background-image: url("/assets/images/backgroud1.png");
-    background-position: right top 20px;
-    background-size: 48%;
-}
-
 div.card-body ul {
     list-style-image: url('/assets/images/list-check.png');
     list-style-position: outside;

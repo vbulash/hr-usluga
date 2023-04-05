@@ -26,10 +26,15 @@ export default function Body(props) {
 
     return (
         <>
-            <BodyHeader active="Главная"> </BodyHeader>
+            <BodyHeader active="Главная" />
 
             {/* Секция HR-Услуга */}
-            <section className='intro lg:bg-contain lg:bg-no-repeat'>
+            <section className='bg-none sm:bg-[url("/assets/images/backgroud1.png")] sm:bg-contain sm:bg-no-repeat'
+                style={{
+                    backgroundPosition: "right top 20px",
+                    backgroundSize: "48%"
+                }}
+            >
                 <div className="grid grid-cols-12 gap-4">
                     <div className="col-start-2 col-span-10">
                         <h1>HR-Услуга</h1>
