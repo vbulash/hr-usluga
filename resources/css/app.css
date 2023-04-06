@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '../assets/fonts/gilroy.css';
+
 @layer base {
   h1 {
     @apply font-black xs:max-lg:text-3xl lg:text-7xl uppercase py-2.5;
