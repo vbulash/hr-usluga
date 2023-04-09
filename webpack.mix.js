@@ -18,4 +18,8 @@ mix
 
 	.postCss('resources/css/app.css', 'public/css', [
 		require('tailwindcss'),
-	]);
+	])
+
+	.browserSync('https://hr-usluga.test')
+	.disableNotifications()
+	;

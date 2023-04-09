@@ -7,54 +7,46 @@ use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Model;
 
 class Post extends Model {
-    use HasSlug, HasMedias;
+	use HasSlug, HasMedias;
 
-    protected $fillable = [
-        'published',
-        'title',
-        'digest',
-        'description',
-        'publish_start_date',
-        'publish_end_date',
-        'publish_at_date',
-    ];
+	protected $fillable = [
+		'published',
+		'title',
+		'digest',
+		'description',
+		'publish_start_date',
+		'publish_end_date',
+		'publish_at_date',
+	];
 
-    public $slugAttributes = [
-        'title',
-    ];
+	public $slugAttributes = [
+		'title',
+	];
 
-    // protected $casts = [
-    //     'publish_at_date' => 'date:d.m.Y',
-    // ];
+	protected $casts = [
+		'publish_at_date' => 'datetime',
+	];
 
-    public $mediasParams = [
-        'cover' => [
-            'default' => [
-                [
-                    'name' => 'default',
-                    'ratio' => 16 / 9,
-                ],
-            ],
-            'mobile' => [
-                [
-                    'name' => 'mobile',
-                    'ratio' => 1,
-                ],
-            ],
-            'flexible' => [
-                [
-                    'name' => 'free',
-                    'ratio' => 0,
-                ],
-                [
-                    'name' => 'landscape',
-                    'ratio' => 16 / 9,
-                ],
-                [
-                    'name' => 'portrait',
-                    'ratio' => 3 / 5,
-                ],
-            ],
-        ],
-    ];
+	public $mediasParams = [
+		'image' => [
+			'desktop' => [
+				[
+					'name' => 'desktop',
+					'ratio' => 16 / 10,
+				],
+			],
+			'tablet' => [
+				[
+					'name' => 'tablet',
+					'ratio' => 4 / 3,
+				]
+			],
+			'mobile' => [
+				[
+					'name' => 'mobile',
+					'ratio' => 1,
+				],
+			],
+		],
+	];
 }

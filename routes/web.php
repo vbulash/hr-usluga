@@ -20,19 +20,15 @@ use Inertia\Inertia;
 |
 */
 
-if (App::environment('production')) {
-    URL::forceScheme('https');
-}
-
 Route::get('/', [BodyController::class, 'index']);
 
 Route::get('/services', function () {
-    return Inertia::render('Services');
+	return Inertia::render('Services');
 });
 Route::get('/service/{slug}', function ($slug) {
-    return Inertia::render('ServicePage', [
-        'slug' => $slug
-    ]);
+	return Inertia::render('ServicePage', [
+		'slug' => $slug
+	]);
 });
 
 // Route::get('/', function () {
@@ -49,13 +45,13 @@ Route::get('/privacy.policy', fn() => Inertia::render('Documents/PrivacyPolicy')
 Route::get('/terms.of.use', fn() => Inertia::render('Documents/TermsOfUse'));
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+	return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+	Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+	Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+	Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 // Route::module('pages');
