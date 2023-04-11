@@ -64,3 +64,11 @@ div.card-body ul li::marker {
 .document ul li {
     @apply pb-2;
 }
+
+.fc .fc-button-primary {
+	@apply bg-white text-primary border-primary hover:bg-primary hover:text-white outline-none;
+}
+
+.fc-daygrid-event-dot {
+	@apply bg-primary;
+}

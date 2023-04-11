@@ -28,18 +28,19 @@ class PostController extends BaseModuleController {
 		'title' => 'asc'
 	];
 
-	public function getPosts(string $mode = 'desktop') {
+	public function getPosts(string $mode = 'desktop', bool $short = true) {
 		$posts = [];
 		Post::all()->sortByDesc('publish_at_date')
-			->each(function ($post) use (&$posts, &$once, $mode) {
+			->each(function ($post) use (&$posts, &$once, $mode, $short) {
 				$params = [
 					'id' => $post->getKey(),
 					'slug' => $post->getSlug(),
 					'digest' => $post->digest,
 					'title' => $post->title,
-					'description' => $post->description,
 					'publish_at_date' => $post->publish_at_date->format('d.m.Y')
 				];
+				if (!$short)
+					$params['description'] = $post->description;
 				if ($post->hasImage('image', $mode))
 					$params['image'] = $post->image('image', $mode);
 				$posts[] = (object) $params;

@@ -60,7 +60,7 @@ export default function PostSection() {
 							{
 								posts.map(post =>
 									<SwiperSlide>
-										<PostCard post={post} key={post.slug} />
+										<PostCard post={post} key={post.slug} className="h-full" />
 									</SwiperSlide>
 								)
 							}

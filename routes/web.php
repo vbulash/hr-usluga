@@ -31,6 +31,10 @@ Route::get('/service/{slug}', function ($slug) {
 	]);
 });
 
+Route::get('/posts', function () {
+	return Inertia::render('Posts');
+});
+
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
 //         'canLogin' => Route::has('login'),
