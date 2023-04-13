@@ -1,17 +1,48 @@
-export default function PostCard({ post }) {
+import { Link } from '@inertiajs/react';
+
+export default function PostCard({ post, full }) {
+	const body = full ?
+		post.description :
+		post.digest;
 	return (
-		<div className="shadow-lg rounded-xl flex flex-col justify-between">
+		<div className={
+			(full ? '' : 'shadow-lg rounded-xl ') + 'flex flex-col justify-between'
+		}>
 			<div>
-				<img src={post.image} className="rounded-t-xl mb-7" alt="" />
-				<div className=" px-6 pt-6">
-					<div className="text-xl font-black mb-4">{post.title}</div>
-					<div className="text-lg mb-9">{post.digest}</div>
-					{/* <div dangerouslySetInnerHTML={{ __html: post.description }} /> */}
+				<img src={post.image} className={
+					full ? 'mb-5 rounded-xl' : 'mb-7 rounded-t-xl'
+				} alt="" />
+				<div className={
+					(full ? '' : 'px-6 ') + 'pt-6'
+				}>
+					{
+						full ?
+							(<div className="text-sm mb-7">{post.publish_at_date}</div>) :
+							(<div>&nbsp;</div>)
+					}
+					<div className={
+						(full ? 'text-4xl' : 'text-xl') +
+						' font-black mb-4'
+					}>{post.title}</div>
+					<div className="post-content mb-5" dangerouslySetInnerHTML={{ __html: body }} />
 				</div>
 			</div>
 			<div className="flex justify-between content-center">
-				<div className="text-sm ps-6 pt-3">{post.publish_at_date}</div>
-				<a href="#" className="px-6 py-3 rounded-tl-xl rounded-br-xl bg-primary text-white font-bold">Читать полностью</a>
+				{
+					full ?
+						(<div>&nbsp;</div>) :
+						(<div className="text-sm ps-6 pt-3">{post.publish_at_date}</div>)
+				}
+				{
+					full ?
+						(<div>&nbsp;</div>) :
+						(
+							<Link href={'/posts/' + post.id} method="get" as="button"
+								className='px-6 py-3 rounded-tl-xl rounded-br-xl bg-primary text-white font-bold'>
+								Читать полностью
+							</Link>
+						)
+				}
 			</div>
 		</div>
 	);

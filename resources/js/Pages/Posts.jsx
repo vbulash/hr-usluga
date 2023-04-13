@@ -81,7 +81,7 @@ export default function Posts() {
 											posts.map(post =>
 												post.slug != first.slug ? (
 													<SwiperSlide key={post.slug} className='h-full'>
-														<PostCard post={post} className="h-full" />
+														<PostCard post={post} full={false} className="h-full" />
 													</SwiperSlide>
 												) : null
 											)

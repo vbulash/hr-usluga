@@ -20,7 +20,7 @@ export default function BodyFooter({ active }) {
 						<p>Реквизиты и ссылки на важные документы здесь.</p>
 					</div>
 					<div className="md:w-[30%] lg:w-[18%]">
-						<img src={'assets/images/qr_natalya_bulash.png'} alt="" />
+						<img src={'/assets/images/qr_natalya_bulash.png'} alt="" />
 						<div className="flex flex-col space-y-1.5 text-sm ml-2">
 							<a href="tel:+79031009633" className='hover:text-primary hover:underline hover:underline-offset-4'><FontAwesomeIcon icon={faPhone} /> +7 (903) 100-96-33</a>
 							<a href="mailto:info@hr-usluga.ru" className='hover:text-primary hover:underline hover:underline-offset-4'><FontAwesomeIcon icon={faEnvelope} /> info@hr-usluga.ru</a>

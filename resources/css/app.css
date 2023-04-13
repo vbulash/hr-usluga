@@ -72,3 +72,33 @@ div.card-body ul li::marker {
 .fc-daygrid-event-dot {
 	@apply bg-primary;
 }
+
+.fc-toolbar-title {
+	@apply text-lg text-primary font-bold normal-case;
+}
+
+.post-content p {
+	@apply mb-6;
+}
+
+.post-content a {
+	@apply text-primary font-semibold hover:font-extrabold;
+}
+
+.post-content blockquote {
+	@apply px-5 italic mb-6;
+	border-left-color: rgba(0, 0, 0, 0.05);
+	@apply border-l-8 border-solid;
+}
+
+.post-content h2 {
+	@apply mb-5 text-3xl normal-case text-black;
+}
+
+.post-content ul {
+	@apply ms-12 mb-6 list-disc;
+}
+
+.post-content ul li {
+	@apply mb-4;
+}

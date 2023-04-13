@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Pages\BodyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -34,6 +35,7 @@ Route::get('/service/{slug}', function ($slug) {
 Route::get('/posts', function () {
 	return Inertia::render('Posts');
 });
+Route::get('/posts/{post}', [PostController::class, 'getPost'])->name('posts.get');
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [

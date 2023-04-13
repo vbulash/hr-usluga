@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from '@inertiajs/react'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -59,17 +60,18 @@ export default function PostSection() {
 						>
 							{
 								posts.map(post =>
-									<SwiperSlide>
-										<PostCard post={post} key={post.slug} className="h-full" />
+									<SwiperSlide key={post.slug}>
+										<PostCard post={post} full={false} className="h-full" />
 									</SwiperSlide>
 								)
 							}
 						</Swiper>
 					</div>
 					<div className="flex xs:flex-col-reverse sm:flex-row xs:gap-y-4 justify-between">
-						<a href='/posts' className='px-7 py-3.5 rounded-xl bg-primary text-white text-lg font-bold'>
+						<Link href="/posts" method="get" as="button"
+							className='px-7 py-3.5 rounded-xl bg-primary text-white text-lg font-bold'>
 							Посмотреть все новости
-						</a>
+						</Link>
 						<div className="flex flex-row justify-start">
 							<button className="w-24 h-12 border border-primary rounded-l-xl px-6 hover:bg-primary" id="post-prev" onClick={handlePrev}
 								onMouseOver={event => (document.getElementById('post-arrow-prev').src = '/assets/images/hover-arrow-left.png')}
