@@ -102,3 +102,8 @@ div.card-body ul li::marker {
 .post-content ul li {
 	@apply mb-4;
 }
+
+.event-tooltip {
+	@apply bg-primary text-white p-2 rounded-lg opacity-100;
+	z-index: 1000;
+}

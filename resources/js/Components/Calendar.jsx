@@ -2,11 +2,12 @@ import React from 'react'
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import ruLocale from '@fullcalendar/core/locales/ru'
-import Tooltip from 'tooltip-js/dist/tooltip';
+import { Tooltip } from 'bootstrap'
 
 export default class Calendar extends React.Component {
 	constructor(props) {
 		super(props);
+		this.tooltipInstance = null;
 	}
 
 	handleEventClick = (data) => {
@@ -34,11 +35,6 @@ export default class Calendar extends React.Component {
 		return result;
 	}
 
-	showTooltip(info) {
-		// console.log(info.el);	// info.event.extendedProps.tooltip
-		// console.log(info.event.extendedProps.tooltip)
-	}
-
 	initialDate() {
 		let date = null;
 		if (this.props.current == null) {
@@ -51,6 +47,29 @@ export default class Calendar extends React.Component {
 			(date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1) + '-01';;
 	}
 
+	handleMouseEnter(info) {
+		if (info.event.extendedProps.tooltip) {
+			this.tooltipInstance = new Tooltip(info.el, {
+				title: info.event.extendedProps.tooltip,
+				html: true,
+				customClass: 'event-tooltip',
+				offset: [10, 10],
+				placement: "top",
+				trigger: "hover",
+				container: "body"
+			});
+
+			this.tooltipInstance.show();
+		}
+	};
+
+	handleMouseLeave(info) {
+		if (this.tooltipInstance) {
+			this.tooltipInstance.dispose();
+			this.tooltipInstance = null;
+		}
+	};
+
 	render() {
 		const events = this.fillEvents();
 		const initialDate = this.initialDate();
@@ -62,7 +81,8 @@ export default class Calendar extends React.Component {
 				eventClick={this.handleEventClick}
 				eventColor='#663366'
 				eventDisplay='block'
-				eventDidMount={this.showTooltip}
+				eventMouseEnter={this.handleMouseEnter}
+				eventMouseLeave={this.handleMouseLeave}
 				initialDate={initialDate}
 				locales={[ruLocale]}
 				locale='ru'

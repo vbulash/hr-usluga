@@ -48,7 +48,7 @@ export default function Posts() {
 				<div className="grid grid-cols-12">
 					<div className="col-start-2 col-span-10">
 						<div className='text-lg uppercase hover:text-primary'>
-							<a href="/">Главная</a> / Новости
+							<a href={route('home')}>Главная</a> / Новости
 						</div>
 						<h1 className='mb-11'>Новости</h1>
 

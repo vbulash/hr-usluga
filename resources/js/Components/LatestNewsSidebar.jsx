@@ -24,7 +24,7 @@ export default class LatestNewsSidebar extends React.Component {
 									'mb-4 text-center bg-white text-black text-sm hover:font-bold px-4 py-8 rounded-xl' +
 									((new URL(window.location.href)).pathname === '/posts/' + post.id ? ' font-bold' : '')
 								}>
-									<Link href={'/posts/' + post.id} method="get" as="button">
+									<Link href={route('posts.get', { 'post': post.id })} method="get" as="button">
 										{post.title}
 									</Link>
 								</div>

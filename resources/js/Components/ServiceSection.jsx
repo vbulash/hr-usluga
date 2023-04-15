@@ -76,7 +76,7 @@ export default function ServiceSection() {
 					</div>
 
 					<div className="flex xs:flex-col-reverse sm:flex-row xs:gap-y-4 justify-between">
-						<Link href="/services" method="get" as="button"
+						<Link href={route('services.list')} method="get" as="button"
 							className='px-7 py-3.5 rounded-xl bg-primary text-white text-lg font-bold'>
 							Посмотреть все услуги
 						</Link>

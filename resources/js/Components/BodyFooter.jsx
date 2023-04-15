@@ -16,7 +16,7 @@ export default function BodyFooter({ active }) {
 				<div className="col-start-2 col-span-10 flex flex-row flex-wrap gap-x-4 gap-y-8">
 					<div className="md:w-[70%] lg:w-[48%]">
 						<p><strong>Наталья Булаш</strong><br />Консультант по управлению персоналом и карьерному развитию.</p>
-						<p>Отсканируйте QR-код справа и вы сможете импортировать мою электронную визитку.</p>
+						<p>Отсканируйте QR-код <span className='lg:hidden'>снизу</span><span className='xs:max-lg:hidden'>справа</span> и вы сможете импортировать мою электронную визитку.</p>
 						<p>Реквизиты и ссылки на важные документы здесь.</p>
 					</div>
 					<div className="md:w-[30%] lg:w-[18%]">
@@ -49,7 +49,7 @@ export default function BodyFooter({ active }) {
 				<div className="col-start-2 col-span-10">
 					<footer className='my-6 flex xs:max-md:flex-col md:flex-row md:justify-between gap-x-4 gap-y-8'>
 						<p className='text-lg font-bold text-white'>&copy; 2023 HR-Услуга. Все права защищены. | Сайт создан студией <a href="https://bulash.ru" className='underline underline-offset-4'>Bulash.ru</a></p>
-						<p className='text-lg font-normal text-white underline underline-offset-4'><a href='/persdata'>Политика обработки персональных данных</a></p>
+						<p className='text-lg font-normal text-white underline underline-offset-4'><a href={route('persdata')}>Политика обработки персональных данных</a></p>
 					</footer>
 				</div>
 			</div>

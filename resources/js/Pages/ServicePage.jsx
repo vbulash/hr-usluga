@@ -32,14 +32,14 @@ export default function ServicePage(props) {
 							<div className="grid grid-cols-12 gap-4">
 								<div className="col-start-2 col-span-10">
 									<div className='text-lg uppercase hover:text-primary'>
-										<a href="/">Главная</a> / Услуги
+										<a href={route('home')}>Главная</a> / Услуги
 									</div>
 									<h1>{service.title}</h1>
 									<div className="grid grid-cols-10 gap-4 xl:bg-[url('/assets/images/service-background.png')] bg-contain bg-right-top bg-no-repeat">
 										<div className='col-start-1 xs:max-xl:col-span-10 xl:col-span-5 flex flex-col items-start mt-6 mb-6 grow-0'>
 											{
 												service.tags.map(tag => (
-													<div className='basis-0 mt-2.5 py-1 text-2xl uppercase'>
+													<div className='basis-0 mt-2.5 py-1 text-2xl uppercase' key={tag}>
 														{tag}
 													</div>
 												))

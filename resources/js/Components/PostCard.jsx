@@ -4,6 +4,9 @@ export default function PostCard({ post, full }) {
 	const body = full ?
 		post.description :
 		post.digest;
+
+	const postUrl = (post.id == undefined ? null : route('posts.get', { post: post.id }))
+
 	return (
 		<div className={
 			(full ? '' : 'shadow-lg rounded-xl ') + 'flex flex-col justify-between'
@@ -15,11 +18,7 @@ export default function PostCard({ post, full }) {
 				<div className={
 					(full ? '' : 'px-6 ') + 'pt-6'
 				}>
-					{
-						full ?
-							(<div className="text-sm mb-7">{post.publish_at_date}</div>) :
-							(<div>&nbsp;</div>)
-					}
+					<div className="text-sm mb-7">{post.publish_at_date}</div>
 					<div className={
 						(full ? 'text-4xl' : 'text-xl') +
 						' font-black mb-4'
@@ -27,17 +26,12 @@ export default function PostCard({ post, full }) {
 					<div className="post-content mb-5" dangerouslySetInnerHTML={{ __html: body }} />
 				</div>
 			</div>
-			<div className="flex justify-between content-center">
-				{
-					full ?
-						(<div>&nbsp;</div>) :
-						(<div className="text-sm ps-6 pt-3">{post.publish_at_date}</div>)
-				}
+			<div className="flex justify-end content-center">
 				{
 					full ?
 						(<div>&nbsp;</div>) :
 						(
-							<Link href={'/posts/' + post.id} method="get" as="button"
+							<Link href={postUrl} method="get" as="button"
 								className='px-6 py-3 rounded-tl-xl rounded-br-xl bg-primary text-white font-bold'>
 								Читать полностью
 							</Link>

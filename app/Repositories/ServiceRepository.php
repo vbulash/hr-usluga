@@ -8,9 +8,9 @@ use A17\Twill\Repositories\ModuleRepository;
 use App\Models\Service;
 
 class ServiceRepository extends ModuleRepository {
-    use HandleSlugs, HandleTags;
+	use HandleSlugs, HandleTags;
 
-    public function __construct(Service $model) {
-        $this->model = $model;
-    }
+	public function __construct(Service $model) {
+		$this->model = $model;
+	}
 }

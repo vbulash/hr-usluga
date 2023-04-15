@@ -6,3 +6,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::module('services');
 Route::module('posts');
+Route::module('certificates');

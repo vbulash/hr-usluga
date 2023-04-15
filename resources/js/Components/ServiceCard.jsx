@@ -29,7 +29,7 @@ export default function ServiceCard({ card, short = false }) {
 			<div className='flex flex-col items-start grow-0'>
 				{short ?
 					(
-						<a href={'/service/' + card.slug} className='px-7 py-3.5 mb-11 rounded-r-xl bg-primary text-white text-lg font-bold'>
+						<a href={route('services.get', { 'slug': card.slug })} className='px-7 py-3.5 mb-11 rounded-r-xl bg-primary text-white text-lg font-bold'>
 							Подробнее об услуге
 						</a>
 					) : null

@@ -1,11 +1,11 @@
 const MenuItems = [
-	['Главная', '/'],
-	['Услуги', '/services'],
-	['Новости', '/posts'],
-	['События', '/events'],
-	['Обо мне', '/about'],
-	['Партнёры', '/partners'],
-	['Обратная связь', '/contact'],
+	['Главная', route('home')],
+	['Услуги', route('services.list')],
+	['Новости', route('posts.list')],
+	// ['События', '/events'],
+	['Обо мне', route('about')],
+	// ['Партнёры', '/partners'],
+	// ['Обратная связь', '/contact'],
 ];
 
 export default MenuItems;

@@ -1207,6 +1207,9 @@ select {
 .mb-2\.5 {
   margin-bottom: 0.625rem;
 }
+.mb-20 {
+  margin-bottom: 5rem;
+}
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -4211,6 +4214,17 @@ div.card-body ul li::marker {
 
 .post-content ul li {
   margin-bottom: 1rem;
+}
+
+.event-tooltip {
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(102 51 102 / var(--tw-bg-opacity));
+  padding: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  opacity: 1;
+	z-index: 1000;
 }
 
 .before\:pointer-events-none::before {
@@ -7701,6 +7715,10 @@ div.card-body ul li::marker {
 
   .lg\:block {
     display: block;
+  }
+
+  .lg\:hidden {
+    display: none;
   }
 
   .lg\:w-3\/5 {
