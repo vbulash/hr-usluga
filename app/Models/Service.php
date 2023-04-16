@@ -2,25 +2,37 @@
 
 namespace App\Models;
 
-use A17\Twill\Models\Behaviors\HasBlocks;
-use A17\Twill\Models\Behaviors\HasMedias;
-use A17\Twill\Models\Behaviors\HasPosition;
-use A17\Twill\Models\Behaviors\HasSlug;
-use A17\Twill\Models\Model;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
+/**
+ * Услуга
+ *
+ * @property int $position
+ * @property string $title
+ * @property string $description
+ * @property string $price
+ */
 class Service extends Model {
-	use HasBlocks, HasSlug, HasMedias, HasPosition;
+	use HasSlug;
 
 	protected $fillable = [
-		'published',
 		'position',
+		'slug',
 		'title',
 		'description',
 		'price',
 	];
 
-	public $slugAttributes = [
-		'title',
-	];
+	public function getSlugOptions(): SlugOptions {
+		return SlugOptions::create()
+			->generateSlugsFrom('title')
+			->saveSlugsTo('slug');
+	}
+
+	public function tags(): HasMany {
+		return $this->hasMany(Tag::class);
+	}
 }

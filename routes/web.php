@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\ServiceController;
-use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\Pages\BodyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -21,20 +21,20 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', [BodyController::class, 'index']);
+Route::get('/', [BodyController::class, 'index'])->name('home');
 
 Route::get('/services', function () {
 	return Inertia::render('Services');
-});
+})->name('services.list');
 Route::get('/service/{slug}', function ($slug) {
 	return Inertia::render('ServicePage', [
 		'slug' => $slug
 	]);
-});
+})->name('services.get');
 
 Route::get('/posts', function () {
 	return Inertia::render('Posts');
-});
+})->name('posts.list');
 Route::get('/posts/{post}', [PostController::class, 'getPost'])->name('posts.get');
 
 // Route::get('/', function () {
@@ -46,9 +46,9 @@ Route::get('/posts/{post}', [PostController::class, 'getPost'])->name('posts.get
 //     ]);
 // });
 
-Route::get('/persdata', fn() => Inertia::render('Documents/PersData'));
-Route::get('/privacy.policy', fn() => Inertia::render('Documents/PrivacyPolicy'));
-Route::get('/terms.of.use', fn() => Inertia::render('Documents/TermsOfUse'));
+Route::get('/persdata', fn() => Inertia::render('Documents/PersData'))->name('persdata');
+Route::get('/privacy.policy', fn() => Inertia::render('Documents/PrivacyPolicy'))->name('privacy.policy');
+Route::get('/terms.of.use', fn() => Inertia::render('Documents/TermsOfUse'))->name('terms.of.use');
 
 Route::get('/dashboard', function () {
 	return Inertia::render('Dashboard');

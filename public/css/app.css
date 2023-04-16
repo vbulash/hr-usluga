@@ -3245,10 +3245,6 @@ select {
 .pr-\[24px\] {
   padding-right: 24px;
 }
-.ps-6 {
-  -webkit-padding-start: 1.5rem;
-          padding-inline-start: 1.5rem;
-}
 .pt-0 {
   padding-top: 0px;
 }
@@ -3263,9 +3259,6 @@ select {
 }
 .pt-2\.5 {
   padding-top: 0.625rem;
-}
-.pt-3 {
-  padding-top: 0.75rem;
 }
 .pt-4 {
   padding-top: 1rem;

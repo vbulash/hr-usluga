@@ -2,51 +2,39 @@
 
 namespace App\Models;
 
-use A17\Twill\Models\Behaviors\HasSlug;
-use A17\Twill\Models\Behaviors\HasMedias;
-use A17\Twill\Models\Model;
+use Illuminate\Database\Eloquent\Model;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
+/**
+ * Новость
+ *
+ * @property string $slug
+ * @property string $cover
+ * @property string $title
+ * @property string $digest
+ * @property string $description
+ * @property \DateTime $publish_at_date
+ */
 class Post extends Model {
-	use HasSlug, HasMedias;
+	use HasSlug;
 
 	protected $fillable = [
-		'published',
-		'title',
-		'digest',
-		'description',
-		'publish_start_date',
-		'publish_end_date',
-		'publish_at_date',
-	];
-
-	public $slugAttributes = [
-		'title',
+		'slug',
+		'cover', // Изображение записи
+		'title', // Название новости
+		'digest', // Краткое содержание новости
+		'description', // Содержание новости
+		'publish_at_date', // Дата публикации
 	];
 
 	protected $casts = [
 		'publish_at_date' => 'datetime',
 	];
 
-	public $mediasParams = [
-		'image' => [
-			'desktop' => [
-				[
-					'name' => 'desktop',
-					'ratio' => 16 / 10,
-				],
-			],
-			'tablet' => [
-				[
-					'name' => 'tablet',
-					'ratio' => 4 / 3,
-				]
-			],
-			'mobile' => [
-				[
-					'name' => 'mobile',
-					'ratio' => 1,
-				],
-			],
-		],
-	];
+	public function getSlugOptions(): SlugOptions {
+		return SlugOptions::create()
+			->generateSlugsFrom('title')
+			->saveSlugsTo('slug');
+	}
 }
