@@ -58,8 +58,8 @@ export default function Body(props) {
 								)
 							}
 						</ul>
-						<button className='px-7 py-3.5 mb-11 rounded-xl bg-primary text-white text-lg font-bold'>Узнать больше</button>
-						<Socials />
+						{/* <button className='px-7 py-3.5 mb-11 rounded-xl bg-primary text-white text-lg font-bold'>Узнать больше</button>
+						<Socials /> */}
 					</div>
 				</div>
 			</section>
