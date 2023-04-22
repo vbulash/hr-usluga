@@ -9,7 +9,7 @@ export default function PostCard({ post, full }) {
 
 	return (
 		<div className={
-			(full ? '' : 'shadow-lg rounded-xl ') + 'flex flex-col justify-between'
+			(full ? '' : 'shadow-lg rounded-xl ') + 'flex flex-col justify-between h-full'
 		}>
 			<div>
 				<img src={post.image} className={

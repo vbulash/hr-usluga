@@ -45,7 +45,7 @@ export default function ServiceSection() {
 						Кнопка &laquo;Подробнее об услуге&raquo; открывает страницу услуги с более подробным описанием.<br />
 						Кнопка &laquo;Заказать&raquo; приведет вас на форму анкеты для заказа услуги.
 					</p>
-					<div className="relative flex flex-row flex-nowrap">
+					<div className="relative flex flex-row flex-nowrap mb-10">
 						<Swiper
 							ref={sliderRef}
 							spaceBetween={16}
@@ -67,7 +67,7 @@ export default function ServiceSection() {
 						>
 							{
 								services.map(service => (
-									<SwiperSlide key={service.slug}>
+									<SwiperSlide key={service.slug} style={{ height: 'auto' }} className="p-4">
 										<ServiceCard card={service} short={true} />
 									</SwiperSlide>
 								))

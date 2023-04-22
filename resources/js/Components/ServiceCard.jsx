@@ -2,7 +2,10 @@ import ServiceOrder from "./ServiceOrder";
 
 export default function ServiceCard({ card, short = false }) {
 	return (
-		<div className="xs:w-[300px] xs:min-w-[300px] sm:w-[360px] sm:min-w-[360px] shadow-lg rounded-xl mb-11 flex flex-col justify-between">
+		<div className={
+			"xs:w-[300px] xs:min-w-[300px] sm:w-[360px] sm:min-w-[360px] shadow-lg rounded-xl mb-11 flex flex-col justify-between" +
+			(window.location.href == route('services.list') ? '' : " h-full")
+		}>
 			<div>
 				<div className="card-header
                                     flex justify-center items-center

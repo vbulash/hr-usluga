@@ -80,7 +80,7 @@ export default function Posts() {
 										{
 											posts.map(post =>
 												post.slug != first.slug ? (
-													<SwiperSlide key={post.slug} className='h-full'>
+													<SwiperSlide key={post.slug} style={{ height: 'auto' }} className="p-4">
 														<PostCard post={post} full={false} className="h-full" />
 													</SwiperSlide>
 												) : null

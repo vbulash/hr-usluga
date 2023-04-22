@@ -7217,16 +7217,12 @@ div.card-body ul li::marker {
     width: 300px;
   }
 
-  .xs\:w-\[50\%\] {
-    width: 50%;
+  .xs\:w-\[70\%\] {
+    width: 70%;
   }
 
   .xs\:w-full {
     width: 100%;
-  }
-
-  .xs\:w-\[70\%\] {
-    width: 70%;
   }
 
   .xs\:min-w-\[300px\] {
