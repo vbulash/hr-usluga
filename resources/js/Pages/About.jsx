@@ -31,6 +31,18 @@ export default function About() {
 		// initTE({ Ripple });
 	}, []);
 
+	const sliderRef = useRef(null);
+
+	const handlePrev = useCallback(() => {
+		if (!sliderRef.current) return;
+		sliderRef.current.swiper.slidePrev();
+	}, []);
+
+	const handleNext = useCallback(() => {
+		if (!sliderRef.current) return;
+		sliderRef.current.swiper.slideNext();
+	}, []);
+
 	return (
 		<>
 			<BodyHeader active="Обо мне" />
@@ -44,9 +56,27 @@ export default function About() {
 
 					{/* Фотография и образование */}
 					<section>
-						<div className="flex xs:flex-col md:flex-row items-start gap-16 mb-14 md:mb-24 lg:mb-36">
-							<img src="/assets/images/natalya-bulash-about.png" alt=""
-								className='xs:w-[50%] md:w-[30%] shadow-xl p-0 rounded-xl' />
+						<div className="flex xs:flex-col md:flex-row items-start gap-16 mb-12 md:mb-20 lg:mb-30">
+							<div className='xs:w-[70%] md:w-[30%] p-0'>
+								<img src="/assets/images/natalya-bulash-about.png" alt=""
+									className='shadow-xl rounded-xl mb-6' />
+								<div className="mb-4 text-primary text-xl md:text-2xl lg:text-4xl font-bold uppercase">
+									Важные документы
+								</div>
+								<ul>
+									{
+										[
+											{ id: 1, route: 'persdata', label: 'Политика обработки персональных данных' },
+											{ id: 2, route: 'privacy.policy', label: 'Политика конфиденциальности' },
+											{ id: 3, route: 'terms.of.use', label: 'Пользовательское соглашение' },
+										].map(doc => (
+											<li className='mb-2 text-lg font-bold hover:font-black text-primary' key={doc.id}>
+												<a href={route(doc.route)}>{doc.label}</a>
+											</li>
+										))
+									}
+								</ul>
+							</div>
 							<div className="xs:w-full md:w-[70%]">
 								<div className="mb-6 text-primary text-xl md:text-2xl lg:text-4xl font-bold uppercase">
 									Образование
@@ -148,7 +178,21 @@ export default function About() {
 					{/* Мои сертификаты */}
 					<section>
 						<div className='mb-10 text-center font-bold text-xl md:text-2xl lg:text-4xl text-primary'>Мои сертификаты:</div>
-						<div className='grid xs:max-xl:grid-cols-1 xl:grid-cols-2 gap-10'>
+						<Swiper
+							ref={sliderRef}
+							spaceBetween={40}
+							loop={false}
+							slidesPerView={1}
+							autoHeight={false}
+							breakpoints={{
+								320: {
+									slidesPerView: 1
+								},
+								1280: {
+									slidesPerView: 2
+								}
+							}}
+						>
 							{
 								[
 									{ id: 1, pic: '/assets/images/certifcates/Диплом-2-1.jpeg', title: 'Диплом профессионального психолога' },
@@ -156,13 +200,42 @@ export default function About() {
 									{ id: 3, pic: '/assets/images/certifcates/АППК.jpg', title: 'Членство в ассоциации практических психологов и коучей' },
 									{ id: 4, pic: '/assets/images/certifcates/ERCA.jpg', title: 'Сертификат ERCA: Career Development' },
 								].map(certificate => (
-									<div key={certificate.id} className='px-9 py-9 rounded-xl shadow-xl flex flex-col items-center'>
-										<img src={certificate.pic} alt={certificate.title} className='max-h-[435px] pb-5'
-										/>
-										<div className='text-primary font-bold text-md md:text-lg lg:text-xl'>{certificate.title}</div>
-									</div>
+									<SwiperSlide key={certificate.id}>
+										<div className='px-9 py-9 flex flex-col justify-center items-center'>
+											<img src={certificate.pic} alt={certificate.title} className='max-h-[435px] pb-5'
+											/>
+											<div className='text-primary font-bold text-md md:text-lg lg:text-xl'>{certificate.title}</div>
+										</div>
+									</SwiperSlide>
 								))
 							}
+						</Swiper>
+						<div className="flex xs:flex-col-reverse sm:flex-row xs:gap-y-4 justify-between">
+							<div>&nbsp;</div>
+							<div className="flex flex-row justify-start">
+								<button className="w-24 h-12 border border-primary rounded-l-xl px-6 hover:bg-primary" id="certificate-prev" onClick={handlePrev}
+									onMouseOver={event => (document.getElementById('certificate-arrow-prev').src = '/assets/images/hover-arrow-left.png')}
+									onMouseOut={event => (document.getElementById('certificate-arrow-prev').src = '/assets/images/arrow-left.png')}
+								>
+									<img
+										id='certificate-arrow-prev'
+										src="/assets/images/arrow-left.png"
+										onMouseOver={event => (event.target.src = '/assets/images/hover-arrow-left.png')}
+										onMouseOut={event => (event.target.src = '/assets/images/arrow-left.png')}
+										alt="" />
+								</button>
+								<button className="w-24 h-12 border border-primary rounded-r-xl px-6 hover:bg-primary" id="certificate-next" onClick={handleNext}
+									onMouseOver={event => (document.getElementById('certificate-arrow-next').src = '/assets/images/hover-arrow-right.png')}
+									onMouseOut={event => (document.getElementById('certificate-arrow-next').src = '/assets/images/arrow-right.png')}
+								>
+									<img
+										id='certificate-arrow-next'
+										src="/assets/images/arrow-right.png"
+										onMouseOver={event => (event.target.src = '/assets/images/hover-arrow-right.png')}
+										onMouseOut={event => (event.target.src = '/assets/images/arrow-right.png')}
+										alt="" />
+								</button>
+							</div>
 						</div>
 					</section>
 				</div>

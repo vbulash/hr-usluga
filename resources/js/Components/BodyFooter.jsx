@@ -17,7 +17,7 @@ export default function BodyFooter({ active }) {
 					<div className="md:w-[70%] lg:w-[48%]">
 						<p><strong>Наталья Булаш</strong><br />Консультант по управлению персоналом и карьерному развитию.</p>
 						<p>Отсканируйте QR-код <span className='lg:hidden'>снизу</span><span className='xs:max-lg:hidden'>справа</span> и вы сможете импортировать мою электронную визитку.</p>
-						<p>Реквизиты и ссылки на важные документы здесь.</p>
+						<p>Информация обо мне  и ссылки на важные документы <a href={route('about')} className='text-primary font-bold hover:underline'>здесь</a>.</p>
 					</div>
 					<div className="md:w-[30%] lg:w-[18%]">
 						<img src={'/assets/images/qr_natalya_bulash.png'} alt="" />
