@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Pages\BodyController;
@@ -40,6 +41,8 @@ Route::get('/posts/{post}', [PostController::class, 'getPost'])->name('posts.get
 Route::get('/about', function () {
 	return Inertia::render('About');
 })->name('about');
+
+Route::get('/contacts', [ContactsController::class, 'main'])->name('contacts');
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [

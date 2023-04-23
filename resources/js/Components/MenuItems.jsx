@@ -5,7 +5,7 @@ const MenuItems = [
 	// ['События', '/events'],
 	['Обо мне', route('about')],
 	// ['Партнёры', '/partners'],
-	// ['Обратная связь', '/contact'],
+	['Обратная связь', route('contacts')],
 ];
 
 export default MenuItems;
