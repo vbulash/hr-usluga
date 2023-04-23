@@ -1,33 +1,12 @@
 import React, { useState } from "react";
 
 export default function FloatingLabelInput({ type, name, children }) {
-    const [active, setActive] = React.useState(false);
-
-    function handleActivation(e) {
-        setActive(!!e.target.value);
-    }
-
-    return (
-        <div className="relative border rounded mb-2 bg-gray-600 text-black border-white border-opacity-25">
-            <input
-                className={[
-                    "outline-none w-full rounded bg-transparent text-base transition-all duration-200 ease-in-out p-2 focus:border-primary",
-                    active ? "pt-6" : ""
-                ].join(" ")}
-                id={name}
-                name={name}
-                type={type}
-                onChange={handleActivation}
-            />
-            <label
-                className={[
-                    "absolute top-0 left-0 flex items-center font-semibold text-opacity-50 p-2 transition-all duration-200 ease-in-out",
-                    active ? "text-gray-500 text-xs" : "text-primary text-sm"
-                ].join(" ")}
-                htmlFor={name}
-            >
-                {children}
-            </label>
-        </div>
-    );
+	return (
+		<div className="relative">
+			<input type={type} id={name} name={name} className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-2 border-gray-300 appearance-none
+									focus:outline-none focus:ring-0 focus:border-primary peer" placeholder=" " />
+			<label htmlFor={name} className="absolute text-sm text-primary font-semibold text-opacity-50 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-primary peer-focus:font-semibold
+									peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">{children}</label>
+		</div>
+	);
 }

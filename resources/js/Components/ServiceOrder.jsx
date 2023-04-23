@@ -2,6 +2,7 @@ import React from "react";
 import { createPortal } from "react-dom";
 import FloatingLabelInput from "./FloatingLabelInput";
 
+// TODO валидацию сделать по образцу Contacts
 export default class ServiceOrder extends React.Component {
 	constructor(props) {
 		super(props);

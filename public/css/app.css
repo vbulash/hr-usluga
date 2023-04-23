@@ -7452,6 +7452,10 @@ div.card-body ul li::marker {
     .xs\:max-lg\:hidden {
       display: none;
     }
+
+    .xs\:max-lg\:w-full {
+      width: 100%;
+    }
   }
 
   @media not all and (min-width: 768px) {
