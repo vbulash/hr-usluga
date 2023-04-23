@@ -65,6 +65,14 @@ div.card-body ul li::marker {
     @apply pb-2;
 }
 
+.document ol {
+    @apply list-decimal list-inside;
+}
+
+.document ol li {
+    @apply pb-2;
+}
+
 .fc .fc-button-primary {
 	@apply bg-white text-primary border-primary hover:bg-primary hover:text-white outline-none;
 }

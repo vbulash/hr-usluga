@@ -75,7 +75,7 @@ export default function ServiceSection() {
 						</Swiper>
 					</div>
 
-					<div className="flex xs:flex-col-reverse sm:flex-row xs:gap-y-4 justify-between">
+					<div className="flex xs:flex-col-reverse sm:flex-row xs:gap-y-4 justify-between items-center">
 						<Link href={route('services.list')} method="get" as="button"
 							className='px-7 py-3.5 rounded-xl bg-primary text-white text-lg font-bold'>
 							Посмотреть все услуги

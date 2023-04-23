@@ -1,9 +1,12 @@
 import { Link } from '@inertiajs/react';
 
 export default function PostCard({ post, full }) {
+	// const body = full ?
+	// 	post.description :
+	// 	post.digest;
 	const body = full ?
 		post.description :
-		post.digest;
+		'';
 
 	const postUrl = (post.id == undefined ? null : route('posts.get', { post: post.id }))
 

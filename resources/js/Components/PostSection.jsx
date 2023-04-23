@@ -72,7 +72,8 @@ export default function PostSection() {
 							className='px-7 py-3.5 rounded-xl bg-primary text-white text-lg font-bold'>
 							Посмотреть все новости
 						</Link>
-						<div className="flex flex-row justify-start">
+						<div className="xs:max-md:hidden md:flex md:flex-col md:justify-center" id='posts-paging'></div>
+						<div className="flex flex-row justify-start items-center">
 							<button className="w-24 h-12 border border-primary rounded-l-xl px-6 hover:bg-primary" id="post-prev" onClick={handlePrev}
 								onMouseOver={event => (document.getElementById('post-arrow-prev').src = '/assets/images/hover-arrow-left.png')}
 								onMouseOut={event => (document.getElementById('post-arrow-prev').src = '/assets/images/arrow-left.png')}

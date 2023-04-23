@@ -4175,6 +4175,15 @@ div.card-body ul li::marker {
   padding-bottom: 0.5rem;
 }
 
+.document ol {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+.document ol li {
+  padding-bottom: 0.5rem;
+}
+
 .fc .fc-button-primary {
   --tw-border-opacity: 1;
   border-color: rgb(102 51 102 / var(--tw-border-opacity));
@@ -7311,6 +7320,10 @@ div.card-body ul li::marker {
 
   @media not all and (min-width: 768px) {
 
+    .xs\:max-md\:hidden {
+      display: none;
+    }
+
     .xs\:max-md\:flex-col {
       flex-direction: column;
     }
@@ -7698,8 +7711,16 @@ div.card-body ul li::marker {
     flex-direction: row;
   }
 
+  .md\:flex-col {
+    flex-direction: column;
+  }
+
   .md\:items-center {
     align-items: center;
+  }
+
+  .md\:justify-center {
+    justify-content: center;
   }
 
   .md\:justify-between {
