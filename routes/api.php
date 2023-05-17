@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TestimonialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,8 @@ Route::post('/services.order', [ServiceController::class, 'order']);
 Route::post('/posts', [PostController::class, 'getPosts']);
 
 Route::post('/feedback', [ContactsController::class, 'send']);
+
+Route::post('/testimonials', [TestimonialController::class, 'getTestimonials']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 	return $request->user();

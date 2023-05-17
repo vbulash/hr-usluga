@@ -1219,6 +1219,9 @@ select {
 .mb-20 {
   margin-bottom: 5rem;
 }
+.mb-24 {
+  margin-bottom: 6rem;
+}
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -1334,6 +1337,12 @@ select {
 }
 .mt-\[0\.15rem\] {
   margin-top: 0.15rem;
+}
+.mb-28 {
+  margin-bottom: 7rem;
+}
+.mb-32 {
+  margin-bottom: 8rem;
 }
 .box-border {
   box-sizing: border-box;
@@ -3336,6 +3345,9 @@ select {
 }
 .pt-\[0\.37rem\] {
   padding-top: 0.37rem;
+}
+.pb-7 {
+  padding-bottom: 1.75rem;
 }
 .text-left {
   text-align: left;
