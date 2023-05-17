@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import Toast from '@/Components/Toast';
 import ServiceSection from '@/Components/ServiceSection';
 import PostSection from '@/Components/PostSection';
+import TestimonialSection from '@/Components/TestimonialSection';
 
 export default function Body(props) {
 	const [services, setServices] = useState([]);
@@ -63,6 +64,7 @@ export default function Body(props) {
 					</div>
 				</div>
 			</section>
+
 			{/* Секция Услуги */}
 			<section>
 				<WaveSeparator />
@@ -73,13 +75,24 @@ export default function Body(props) {
 					</div>
 				</div>
 			</section>
+
 			{/* Секция Новости и публикации */}
-			<section>
+			<section className='mb-32'>
 				<WaveSeparator />
 				<div className="grid grid-cols-12 gap-4">
 					<div className="col-start-2 col-span-9">
 						<h1 className='mb-12'>Новости и публикации</h1>
 						<PostSection />
+					</div>
+				</div>
+			</section>
+
+			{/* Секция Отзывы */}
+			<section>
+				<div className="grid grid-cols-12 gap-4">
+					<div className="col-start-2 col-span-9">
+						<h1 className='mb-12'>Отзывы</h1>
+						<TestimonialSection />
 					</div>
 				</div>
 			</section>
