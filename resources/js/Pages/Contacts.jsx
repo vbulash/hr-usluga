@@ -38,9 +38,36 @@ export default function Contacts() {
 			errors.push("</ul>\n");
 		}
 
-		//
 		if (valid) {
-			//
+			const feedback = new FormData();
+			feedback.append('fio', fio.value);
+			feedback.append('email', email.value);
+			feedback.append('message', message.value);
+
+			fetch('/api/feedback/', {
+				method: 'POST',
+				body: feedback,
+			}).then(response => {
+				if (response.ok) {
+					window.toast.show('success',
+						`
+                            Письмо с вашим сообщением отправлено.<br/>
+							Мы свяжемся с вами по указанным в форме обратной связи контактным данным.
+                        `
+					);
+					this.hide();
+				} else {
+					window.toast.show('error',
+						`
+                        Ошибка отправки письма с сообщением:
+                        <ul class="list-disc list-inside">
+                            <li class="pl-4">Код ошибки: ${response.status}</li>
+                            <li class="pl-4">Текст ошибки: ${response.statusText}</li>
+                        </ul>
+                        `
+					);
+				}
+			});
 		} else {
 			const message = errors.join("\n");
 			window.toast.show('error', message);
@@ -60,7 +87,7 @@ export default function Contacts() {
 							</div>
 							<h1 className='mb-11'>Обратная связь</h1>
 
-							<div className="flex xs:flex-col lg:flex-row items-start justify-between xs:gap-y-9 sm:gap-x-9">
+							<div className="flex xs:flex-col lg:flex-row items-center justify-between xs:gap-y-9 sm:gap-x-9">
 								<div className="lg:block mt-1.5 xs:max-lg:w-full lg:w-2/5">
 									<div className="mb-9">
 										<FloatingLabelInput type='text' name='fio' children='Имя и фамилия *' />
@@ -72,7 +99,8 @@ export default function Contacts() {
 										<FloatingTextArea name='message' children='Сообщение *' />
 									</div>
 								</div>
-								<div className="lg:w-3/5">
+								<div className="hidden lg:block lg:w-3/5">
+									<img src="/assets/images/envelope4.png" className='float-right' alt="" />
 								</div>
 							</div>
 

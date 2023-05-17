@@ -9,6 +9,9 @@ export default class ServiceOrder extends React.Component {
 		this.state = { show: false };
 		this.button = props.button;
 		this.service = '';
+
+		this.handleSendOrder = this.handleSendOrder.bind(this);
+
 		// Получить this.service по слагу this.props.slug
 		fetch('/api/services.slug/' + this.props.slug, {
 			method: 'POST',
@@ -27,20 +30,22 @@ export default class ServiceOrder extends React.Component {
 		this.setState({ show: false });
 	}
 
-	handleSendOrder() {
+	handleSendOrder(event) {
+		event.preventDefault();
+
 		// Валидировать форму
 		let errors = [];
 		let inputs = [];
 		let checks = [];
 
-		const fio = document.getElementById('fio');
-		const email = document.getElementById('email');
-		const phone = document.getElementById('phone');
-		const promo = document.getElementById('promo');
-		const checkPdd = document.getElementById('checkPdd');
-		const checkConfidential = document.getElementById('checkConfidential');
-		const checkAgreement = document.getElementById('checkAgreement');
-		const resume = document.getElementById('resume');
+		const fio = event.target.fio;
+		const email = event.target.email;
+		const phone = event.target.phone;
+		const promo = event.target.promo;
+		const checkPdd = event.target.checkPdd;
+		const checkConfidential = event.target.checkConfidential;
+		const checkAgreement = event.target.checkAgreement;
+		const resume = event.target.resume;
 
 		if (!fio.value) inputs.push('Имя и фамилия - <strong>не заполнено</strong>');
 		if (email.value) {
@@ -146,75 +151,55 @@ export default class ServiceOrder extends React.Component {
 											&times;
 										</button>
 									</div>
-									{/*body*/}
-									<div className="flex xs:flex-col lg:flex-row items-start justify-between xs:gap-y-9 sm:gap-x-9">
-										<div className="hidden xs:max-lg:block">
-											<div className="mb-4 mx-auto">
-												<label htmlFor="fio">Имя и фамилия</label>
-												<input type="text" name="fio" id='fio'
-													className="mt-2 w-full outline-none rounded bg-transparent text-base p-2 focus:border-primary" />
+									<form onSubmit={this.handleSendOrder}>
+										{/*body*/}
+										<div className="flex xs:flex-col lg:flex-row items-start justify-between xs:gap-y-9 sm:gap-x-9">
+											<div className="hidden lg:block mt-1.5 xs:max-lg:w-full lg:w-2/5">
+												<div className="mb-9">
+													<FloatingLabelInput type='text' name='fio' children='Имя и фамилия *' />
+												</div>
+												<div className="mb-9">
+													<FloatingLabelInput type='text' name='email' children='Электронная почта *' />
+												</div>
+												<div className="mb-12">
+													<FloatingLabelInput type='text' name='phone' children='Телефон для связи' />
+												</div>
+												<FloatingLabelInput type='text' name='promo' children='Промокод для скидки' />
 											</div>
-											<div className="mb-4 mx-auto">
-												<label htmlFor="email">Электронная почта</label>
-												<input type="email" name="email" id='email'
-													className="mt-2 w-full outline-none rounded bg-transparent text-base p-2 focus:border-primary" />
-											</div>
-											<div className="mb-9 mx-auto">
-												<label htmlFor="phone">Телефон для связи</label>
-												<input type="text" name="phone" id='phone'
-													className="mt-2 w-full outline-none rounded bg-transparent text-base p-2 focus:border-primary" />
-											</div>
-											<div className="mx-auto">
-												<label htmlFor="promo">Промокод для скидки</label>
-												<input type="text" name="promo" id='promo'
-													className="mt-2 w-full outline-none rounded bg-transparent text-base p-2 focus:border-primary" />
-											</div>
-										</div>
-										<div className="hidden lg:block mt-1.5 w-2/5">
-											<div className="mb-9">
-												<FloatingLabelInput type='text' name='fio' children='Имя и фамилия' />
-											</div>
-											<div className="mb-9">
-												<FloatingLabelInput type='email' name='email' children='Электронная почта' />
-											</div>
-											<div className="mb-12">
-												<FloatingLabelInput type='text' name='phone' children='Телефон для связи' />
-											</div>
-											<FloatingLabelInput type='text' name='promo' children='Промокод для скидки' />
-										</div>
-										<div className="lg:w-3/5">
-											<p className="mb-4 text-lg font-bold text-black">Чтобы заполнить анкету для заказа услуги и выполнить её оплату, отметьте все пункты ниже:</p>
+											<div className="lg:w-3/5">
+												<p className="mb-4 text-lg font-bold text-black">Чтобы заполнить анкету для заказа услуги и выполнить её оплату, отметьте все пункты ниже:</p>
 
-											{
-												[
-													['checkPdd', 'Я даю согласие на обработку моих персональных данных в соответствии с действующим законодательством Российской Федерации и <a href={ route("persdata") } target="_blank" class="text-primary underline">Политикой обработки персональных данных</a>'],
-													['checkConfidential', 'Я подтверждаю ознакомление с <a href={ route("privacy.policy") } target="_blank" class="text-primary underline">Политикой обеспечения конфиденциальности информации</a>'],
-													['checkAgreement', 'Я ознакомлен(а) с и обязуюсь соблюдать <a href={ route("terms.of.use") } target="_blank" class="text-primary underline">Пользовательское соглашение</a>']
-												].map(([id, title]) => (
-													<div className="form-check flex flex-row flex-nowrap gap-x-2 mb-4 items-start">
-														<input className="form-check-input appearance-none mt-1 h-4 w-4 rounded-sm bg-white text-black checked:bg-primary focus:outline-none" type="checkbox" value="" id={id} name={id} />
-														<label className="form-check-label inline-block text-black" for={id} dangerouslySetInnerHTML={{ __html: title }} />
-													</div>
-												))
-											}
+												{
+													[
+														['checkPdd', 'Я даю согласие на обработку моих персональных данных в соответствии с действующим законодательством Российской Федерации и <a href={ route("persdata") } target="_blank" class="text-primary underline">Политикой обработки персональных данных</a>'],
+														['checkConfidential', 'Я подтверждаю ознакомление с <a href={ route("privacy.policy") } target="_blank" class="text-primary underline">Политикой обеспечения конфиденциальности информации</a>'],
+														['checkAgreement', 'Я ознакомлен(а) с и обязуюсь соблюдать <a href={ route("terms.of.use") } target="_blank" class="text-primary underline">Пользовательское соглашение</a>']
+													].map(([id, title]) => (
+														<div className="form-check flex flex-row flex-nowrap gap-x-2 mb-4 items-start">
+															<input className="form-check-input appearance-none mt-1 h-4 w-4 rounded-sm bg-white text-black checked:bg-primary focus:outline-none" type="checkbox" value="" id={id} name={id} />
+															<label className="form-check-label inline-block text-black" htmlFor={id} dangerouslySetInnerHTML={{ __html: title }} />
+														</div>
+													))
+												}
+											</div>
 										</div>
-									</div>
-									<div className="my-6 text-lg font-bold">
-										Вышлите своё резюме, если оно есть, для предварительного ознакомления (можно вложить 1 файл размером не более 5 MB)
-									</div>
-									<div className="mb-8 text-primary text-lg font-bold">
-										<input type="file" name="resume" id="resume" className="outline-0 focus:outline-0" multiple />
-									</div>
-									{/*footer*/}
-									<div className="flex items-center justify-start">
-										<button
-											className="px-11 py-3.5 bg-primary text-white text-lg font-bold rounded-xl shadow-lg"
-											type="button"
-											onClick={() => this.handleSendOrder()}
-										>
-											Отправить запрос
-										</button>
-									</div>
+										<div className="my-6 text-lg font-bold">
+											Вышлите своё резюме, если оно есть, для предварительного ознакомления (можно вложить 1 файл размером не более 5 MB)
+										</div>
+										<div className="mb-8 text-primary text-lg font-bold">
+											<input type="file" name="resume" id="resume" className="outline-0 focus:outline-0" multiple />
+										</div>
+										{/*footer*/}
+										<div className="flex items-center justify-start">
+											<button
+												className="px-11 py-3.5 bg-primary text-white text-lg font-bold rounded-xl shadow-lg"
+												type="submit"
+											// onClick={() => this.handleSendOrder()}
+											>
+												Отправить запрос
+											</button>
+										</div>
+									</form>
 								</div>
 							</div>
 						</div>

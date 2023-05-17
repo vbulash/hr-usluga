@@ -17,7 +17,7 @@ return new class extends Migration {
 			$table->string('fio')->comment('Фамилия, имя и отчество');
 			$table->string('position')->comment('Должность');
 			$table->string('photo')->comment('Фотография');
-			$table->string('testimonial')->comment('Отзыв');
+			$table->text('testimonial')->comment('Отзыв');
 			$table->timestamps();
 		});
 	}
