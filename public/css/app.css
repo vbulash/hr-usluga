@@ -1102,11 +1102,20 @@ select {
 .col-span-9 {
   grid-column: span 9 / span 9;
 }
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
 .col-start-1 {
   grid-column-start: 1;
 }
 .col-start-2 {
   grid-column-start: 2;
+}
+.col-start-7 {
+  grid-column-start: 7;
+}
+.col-start-8 {
+  grid-column-start: 8;
 }
 .col-end-11 {
   grid-column-end: 11;
@@ -1219,8 +1228,8 @@ select {
 .mb-20 {
   margin-bottom: 5rem;
 }
-.mb-24 {
-  margin-bottom: 6rem;
+.mb-32 {
+  margin-bottom: 8rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -1337,12 +1346,6 @@ select {
 }
 .mt-\[0\.15rem\] {
   margin-top: 0.15rem;
-}
-.mb-28 {
-  margin-bottom: 7rem;
-}
-.mb-32 {
-  margin-bottom: 8rem;
 }
 .box-border {
   box-sizing: border-box;
@@ -1517,6 +1520,9 @@ select {
 .h-screen {
   height: 100vh;
 }
+.h-28 {
+  height: 7rem;
+}
 .max-h-\[435px\] {
   max-height: 435px;
 }
@@ -1567,9 +1573,6 @@ select {
 }
 .w-2\/4 {
   width: 50%;
-}
-.w-2\/5 {
-  width: 40%;
 }
 .w-20 {
   width: 5rem;
@@ -1673,6 +1676,9 @@ select {
 }
 .w-screen {
   width: 100vw;
+}
+.w-28 {
+  width: 7rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -3054,14 +3060,6 @@ select {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.object-none {
-  -o-object-fit: none;
-     object-fit: none;
-}
-.object-right {
-  -o-object-position: right;
-     object-position: right;
-}
 .\!p-2 {
   padding: 0.5rem !important;
 }
@@ -3345,9 +3343,6 @@ select {
 }
 .pt-\[0\.37rem\] {
   padding-top: 0.37rem;
-}
-.pb-7 {
-  padding-bottom: 1.75rem;
 }
 .text-left {
   text-align: left;
@@ -7309,6 +7304,14 @@ div.card-body ul li::marker {
     right: 1.5rem;
   }
 
+  .xs\:col-span-10 {
+    grid-column: span 10 / span 10;
+  }
+
+  .xs\:col-span-12 {
+    grid-column: span 12 / span 12;
+  }
+
   .xs\:my-3 {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
@@ -7409,10 +7412,6 @@ div.card-body ul li::marker {
       grid-column: span 10 / span 10;
     }
 
-    .xs\:max-lg\:block {
-      display: block;
-    }
-
     .xs\:max-lg\:hidden {
       display: none;
     }
@@ -7476,8 +7475,28 @@ div.card-body ul li::marker {
     right: 1.5rem;
   }
 
+  .sm\:col-span-4 {
+    grid-column: span 4 / span 4;
+  }
+
+  .sm\:col-span-7 {
+    grid-column: span 7 / span 7;
+  }
+
   .sm\:col-start-2 {
     grid-column-start: 2;
+  }
+
+  .sm\:col-start-7 {
+    grid-column-start: 7;
+  }
+
+  .sm\:col-start-8 {
+    grid-column-start: 8;
+  }
+
+  .sm\:col-start-9 {
+    grid-column-start: 9;
   }
 
   .sm\:col-end-11 {
@@ -7734,12 +7753,27 @@ div.card-body ul li::marker {
     font-size: 0.75rem;
     line-height: 1rem;
   }
+
+  @media not all and (min-width: 1280px) {
+
+    .sm\:max-xl\:hidden {
+      display: none;
+    }
+  }
 }
 
 @media (min-width: 768px) {
 
   .md\:inset-0 {
     inset: 0px;
+  }
+
+  .md\:col-span-9 {
+    grid-column: span 9 / span 9;
+  }
+
+  .md\:col-span-10 {
+    grid-column: span 10 / span 10;
   }
 
   .md\:mx-2 {
@@ -7915,6 +7949,14 @@ div.card-body ul li::marker {
     grid-column: span 7 / span 7;
   }
 
+  .lg\:col-span-8 {
+    grid-column: span 8 / span 8;
+  }
+
+  .lg\:col-span-9 {
+    grid-column: span 9 / span 9;
+  }
+
   .lg\:my-8 {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -7990,6 +8032,14 @@ div.card-body ul li::marker {
     grid-column: span 5 / span 5;
   }
 
+  .xl\:col-span-7 {
+    grid-column: span 7 / span 7;
+  }
+
+  .xl\:col-start-9 {
+    grid-column-start: 9;
+  }
+
   .xl\:block {
     display: block;
   }
@@ -8007,6 +8057,18 @@ div.card-body ul li::marker {
 
   .\32xl\:col-span-7 {
     grid-column: span 7 / span 7;
+  }
+
+  .\32xl\:col-span-5 {
+    grid-column: span 5 / span 5;
+  }
+
+  .\32xl\:col-span-6 {
+    grid-column: span 6 / span 6;
+  }
+
+  .\32xl\:col-start-8 {
+    grid-column-start: 8;
   }
 }
 

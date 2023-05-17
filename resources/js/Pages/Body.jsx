@@ -69,7 +69,7 @@ export default function Body(props) {
 			<section>
 				<WaveSeparator />
 				<div className="grid grid-cols-12 gap-4">
-					<div className="col-start-2 col-span-9">
+					<div className="col-start-2 col-span-10">
 						<h1 className='mb-12'>Услуги</h1>
 						<ServiceSection />
 					</div>
@@ -80,7 +80,7 @@ export default function Body(props) {
 			<section className='mb-32'>
 				<WaveSeparator />
 				<div className="grid grid-cols-12 gap-4">
-					<div className="col-start-2 col-span-9">
+					<div className="col-start-2 col-span-10">
 						<h1 className='mb-12'>Новости и публикации</h1>
 						<PostSection />
 					</div>
@@ -90,7 +90,7 @@ export default function Body(props) {
 			{/* Секция Отзывы */}
 			<section>
 				<div className="grid grid-cols-12 gap-4">
-					<div className="col-start-2 col-span-9">
+					<div className="col-start-2 col-span-10">
 						<h1 className='mb-12'>Отзывы</h1>
 						<TestimonialSection />
 					</div>
