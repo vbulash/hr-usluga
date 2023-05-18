@@ -1099,23 +1099,11 @@ select {
 .col-span-5 {
   grid-column: span 5 / span 5;
 }
-.col-span-9 {
-  grid-column: span 9 / span 9;
-}
-.col-span-6 {
-  grid-column: span 6 / span 6;
-}
 .col-start-1 {
   grid-column-start: 1;
 }
 .col-start-2 {
   grid-column-start: 2;
-}
-.col-start-7 {
-  grid-column-start: 7;
-}
-.col-start-8 {
-  grid-column-start: 8;
 }
 .col-end-11 {
   grid-column-end: 11;
@@ -1419,6 +1407,9 @@ select {
 .h-20 {
   height: 5rem;
 }
+.h-28 {
+  height: 7rem;
+}
 .h-3 {
   height: 0.75rem;
 }
@@ -1520,9 +1511,6 @@ select {
 .h-screen {
   height: 100vh;
 }
-.h-28 {
-  height: 7rem;
-}
 .max-h-\[435px\] {
   max-height: 435px;
 }
@@ -1579,6 +1567,9 @@ select {
 }
 .w-24 {
   width: 6rem;
+}
+.w-28 {
+  width: 7rem;
 }
 .w-3 {
   width: 0.75rem;
@@ -1676,9 +1667,6 @@ select {
 }
 .w-screen {
   width: 100vw;
-}
-.w-28 {
-  width: 7rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -2790,6 +2778,18 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(63 63 70 / var(--tw-bg-opacity));
 }
+.bg-slate-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+.bg-slate-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+.bg-slate-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
 .bg-opacity-40 {
   --tw-bg-opacity: 0.4;
 }
@@ -2900,6 +2900,20 @@ select {
   --tw-gradient-from: #2dd4bf var(--tw-gradient-from-position);
   --tw-gradient-from-position:  ;
   --tw-gradient-to: rgb(45 212 191 / 0)  var(--tw-gradient-from-position);
+  --tw-gradient-to-position:  ;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-violet-600 {
+  --tw-gradient-from: #7c3aed var(--tw-gradient-from-position);
+  --tw-gradient-from-position:  ;
+  --tw-gradient-to: rgb(124 58 237 / 0)  var(--tw-gradient-from-position);
+  --tw-gradient-to-position:  ;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-primary {
+  --tw-gradient-from: #663366 var(--tw-gradient-from-position);
+  --tw-gradient-from-position:  ;
+  --tw-gradient-to: rgb(102 51 102 / 0)  var(--tw-gradient-from-position);
   --tw-gradient-to-position:  ;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
@@ -3015,6 +3029,14 @@ select {
 }
 .to-yellow-200 {
   --tw-gradient-to: #fef08a var(--tw-gradient-to-position);
+  --tw-gradient-to-position:  ;
+}
+.to-violet-400 {
+  --tw-gradient-to: #a78bfa var(--tw-gradient-to-position);
+  --tw-gradient-to-position:  ;
+}
+.to-white {
+  --tw-gradient-to: #ffffff var(--tw-gradient-to-position);
   --tw-gradient-to-position:  ;
 }
 .bg-contain {
@@ -4296,6 +4318,11 @@ div.card-body ul li::marker {
   color: rgb(255 255 255 / var(--tw-text-opacity));
   opacity: 1;
 	z-index: 1000;
+}
+
+.swiper-pagination-bullet-active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(102 51 102 / var(--tw-bg-opacity));
 }
 
 .before\:pointer-events-none::before {
@@ -7304,10 +7331,6 @@ div.card-body ul li::marker {
     right: 1.5rem;
   }
 
-  .xs\:col-span-10 {
-    grid-column: span 10 / span 10;
-  }
-
   .xs\:col-span-12 {
     grid-column: span 12 / span 12;
   }
@@ -7479,24 +7502,8 @@ div.card-body ul li::marker {
     grid-column: span 4 / span 4;
   }
 
-  .sm\:col-span-7 {
-    grid-column: span 7 / span 7;
-  }
-
   .sm\:col-start-2 {
     grid-column-start: 2;
-  }
-
-  .sm\:col-start-7 {
-    grid-column-start: 7;
-  }
-
-  .sm\:col-start-8 {
-    grid-column-start: 8;
-  }
-
-  .sm\:col-start-9 {
-    grid-column-start: 9;
   }
 
   .sm\:col-end-11 {
@@ -7768,10 +7775,6 @@ div.card-body ul li::marker {
     inset: 0px;
   }
 
-  .md\:col-span-9 {
-    grid-column: span 9 / span 9;
-  }
-
   .md\:col-span-10 {
     grid-column: span 10 / span 10;
   }
@@ -7949,10 +7952,6 @@ div.card-body ul li::marker {
     grid-column: span 7 / span 7;
   }
 
-  .lg\:col-span-8 {
-    grid-column: span 8 / span 8;
-  }
-
   .lg\:col-span-9 {
     grid-column: span 9 / span 9;
   }
@@ -8055,16 +8054,16 @@ div.card-body ul li::marker {
     grid-column: span 3 / span 3;
   }
 
-  .\32xl\:col-span-7 {
-    grid-column: span 7 / span 7;
-  }
-
   .\32xl\:col-span-5 {
     grid-column: span 5 / span 5;
   }
 
   .\32xl\:col-span-6 {
     grid-column: span 6 / span 6;
+  }
+
+  .\32xl\:col-span-7 {
+    grid-column: span 7 / span 7;
   }
 
   .\32xl\:col-start-8 {

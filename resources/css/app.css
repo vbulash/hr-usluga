@@ -115,3 +115,7 @@ div.card-body ul li::marker {
 	@apply bg-primary text-white p-2 rounded-lg opacity-100;
 	z-index: 1000;
 }
+
+.swiper-pagination-bullet-active {
+	@apply bg-primary;
+}

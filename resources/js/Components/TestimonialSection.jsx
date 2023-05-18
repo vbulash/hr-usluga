@@ -58,8 +58,8 @@ export default function TestimonialSection() {
 									el: '#testimonials-paging',
 									clickable: true,
 									type: 'bullets',
-									pauseOnMouseEnter: true,
-									disableOnInteraction: false
+									// pauseOnMouseEnter: true,
+									// disableOnInteraction: false
 								}}
 								modules={[Pagination, Autoplay]}
 								autoplay={{ delay: 3000 }}
@@ -80,7 +80,7 @@ export default function TestimonialSection() {
 							{/* Пейджинг */}
 							<div className="text-center" id="testimonials-paging" />
 							{/* Кнопки навигации */}
-							<div className="flex flex-row justify-start items-center">
+							<div className="hidden flex flex-row justify-start items-center">
 								<button className="w-24 h-12 border border-primary rounded-l-xl px-6 hover:bg-primary" id="testimonial-prev" onClick={handlePrev}
 									onMouseOver={event => (document.getElementById('testimonial-arrow-prev').src = '/assets/images/hover-arrow-left.png')}
 									onMouseOut={event => (document.getElementById('testimonial-arrow-prev').src = '/assets/images/arrow-left.png')}

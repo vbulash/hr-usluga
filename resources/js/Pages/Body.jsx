@@ -66,7 +66,7 @@ export default function Body(props) {
 			</section>
 
 			{/* Секция Услуги */}
-			<section>
+			<section className='mb-32'>
 				<WaveSeparator />
 				<div className="grid grid-cols-12 gap-4">
 					<div className="col-start-2 col-span-10">
@@ -76,9 +76,22 @@ export default function Body(props) {
 				</div>
 			</section>
 
+			{/* Секция Афиша */}
+			<section className='mb-32'>
+				<div className='bg-slate-900'>
+					<div className="grid grid-cols-12 gap-4">
+						<div className="col-start-2 col-span-10">
+							<h1 className='mb-12'>Афиша</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra ut massa ac malesuada. Suspendisse a ante iaculis, bibendum eros vitae, malesuada nisl. Vivamus a sollicitudin lectus. Sed suscipit erat mi, eget ullamcorper est varius non. Pellentesque imperdiet accumsan ante, vitae ultrices erat tincidunt at. Suspendisse vehicula ante nec pellentesque ultrices. Praesent fermentum ultricies ultricies. Duis dignissim aliquam est, a faucibus lorem congue eu. Vestibulum ullamcorper enim mauris, eu venenatis turpis varius in. Proin semper ante est, id semper lacus egestas ut. Quisque id mi neque. Suspendisse hendrerit fermentum massa, a pretium eros mollis et.</p>
+							<p>Aenean ac malesuada dolor. Mauris hendrerit mauris in mollis tristique. Cras vulputate ante lacus, in venenatis enim mattis vel. Praesent dictum libero nisl, vitae lacinia sem condimentum quis. Vestibulum eu mattis metus. Suspendisse eget aliquam nunc. Vivamus eu risus at lacus placerat egestas eu sed ligula. Integer sed dui lacus. Curabitur congue urna sit amet rutrum tempor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi luctus, tellus eget rutrum efficitur, nunc odio congue urna, id auctor nisl quam et elit. Donec sodales elit vel felis consectetur, vitae tincidunt odio fermentum.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			{/* Секция Новости и публикации */}
 			<section className='mb-32'>
-				<WaveSeparator />
+				{/* <WaveSeparator /> */}
 				<div className="grid grid-cols-12 gap-4">
 					<div className="col-start-2 col-span-10">
 						<h1 className='mb-12'>Новости и публикации</h1>
