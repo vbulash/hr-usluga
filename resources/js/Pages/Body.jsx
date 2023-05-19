@@ -78,8 +78,9 @@ export default function Body(props) {
 
 			{/* Секция Афиша */}
 			<section className='mb-32'>
-				<div className='bg-slate-900'>
-					<div className="grid grid-cols-12 gap-4">
+				<div className='skew-y-[-3deg]
+					bg-[linear-gradient(180deg,_rgba(208,_205,_225,_0.5)_-14.24%,_rgba(255,_255,_255,_0.5)_124.1%),_linear-gradient(180deg,_rgba(208,_205,_225,_0.5)_-14.24%,_rgba(255,_255,_255,_0.5)_124.1%)]'>
+					<div className="skew-y-[3deg] py-40 grid grid-cols-12 gap-4">
 						<div className="col-start-2 col-span-10">
 							<h1 className='mb-12'>Афиша</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra ut massa ac malesuada. Suspendisse a ante iaculis, bibendum eros vitae, malesuada nisl. Vivamus a sollicitudin lectus. Sed suscipit erat mi, eget ullamcorper est varius non. Pellentesque imperdiet accumsan ante, vitae ultrices erat tincidunt at. Suspendisse vehicula ante nec pellentesque ultrices. Praesent fermentum ultricies ultricies. Duis dignissim aliquam est, a faucibus lorem congue eu. Vestibulum ullamcorper enim mauris, eu venenatis turpis varius in. Proin semper ante est, id semper lacus egestas ut. Quisque id mi neque. Suspendisse hendrerit fermentum massa, a pretium eros mollis et.</p>

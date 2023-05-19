@@ -1820,6 +1820,34 @@ select {
   --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.skew-y-\[10deg\] {
+  --tw-skew-y: 10deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.skew-y-\[-9deg\] {
+  --tw-skew-y: -9deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.skew-y-\[9deg\] {
+  --tw-skew-y: 9deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.skew-y-\[-2deg\] {
+  --tw-skew-y: -2deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.skew-y-\[2deg\] {
+  --tw-skew-y: 2deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.skew-y-\[-3deg\] {
+  --tw-skew-y: -3deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.skew-y-\[3deg\] {
+  --tw-skew-y: 3deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .scale-0 {
   --tw-scale-x: 0;
   --tw-scale-y: 0;
@@ -2729,6 +2757,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
+.bg-slate-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
 .bg-tag {
   --tw-bg-opacity: 1;
   background-color: rgb(208 205 225 / var(--tw-bg-opacity));
@@ -2778,17 +2810,9 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(63 63 70 / var(--tw-bg-opacity));
 }
-.bg-slate-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-}
 .bg-slate-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(148 163 184 / var(--tw-bg-opacity));
-}
-.bg-slate-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
 }
 .bg-opacity-40 {
   --tw-bg-opacity: 0.4;
@@ -2804,6 +2828,12 @@ select {
 }
 .bg-none {
   background-image: none;
+}
+.bg-\[linear-gradient\(152deg\2c _\#fff\2c _\#00bfd8_42\%\2c _\#0083f5\)\] {
+  background-image: linear-gradient(152deg, #fff, #00bfd8 42%, #0083f5);
+}
+.bg-\[linear-gradient\(180deg\2c _rgba\(208\2c _205\2c _225\2c _0\.5\)_-14\.24\%\2c _rgba\(255\2c _255\2c _255\2c _0\.5\)_124\.1\%\)\2c _linear-gradient\(180deg\2c _rgba\(208\2c _205\2c _225\2c _0\.5\)_-14\.24\%\2c _rgba\(255\2c _255\2c _255\2c _0\.5\)_124\.1\%\)\] {
+  background-image: linear-gradient(180deg, rgba(208, 205, 225, 0.5) -14.24%, rgba(255, 255, 255, 0.5) 124.1%), linear-gradient(180deg, rgba(208, 205, 225, 0.5) -14.24%, rgba(255, 255, 255, 0.5) 124.1%);
 }
 .from-blue-500 {
   --tw-gradient-from: #3b82f6 var(--tw-gradient-from-position);
@@ -2900,20 +2930,6 @@ select {
   --tw-gradient-from: #2dd4bf var(--tw-gradient-from-position);
   --tw-gradient-from-position:  ;
   --tw-gradient-to: rgb(45 212 191 / 0)  var(--tw-gradient-from-position);
-  --tw-gradient-to-position:  ;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.from-violet-600 {
-  --tw-gradient-from: #7c3aed var(--tw-gradient-from-position);
-  --tw-gradient-from-position:  ;
-  --tw-gradient-to: rgb(124 58 237 / 0)  var(--tw-gradient-from-position);
-  --tw-gradient-to-position:  ;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.from-primary {
-  --tw-gradient-from: #663366 var(--tw-gradient-from-position);
-  --tw-gradient-from-position:  ;
-  --tw-gradient-to: rgb(102 51 102 / 0)  var(--tw-gradient-from-position);
   --tw-gradient-to-position:  ;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
@@ -3029,14 +3045,6 @@ select {
 }
 .to-yellow-200 {
   --tw-gradient-to: #fef08a var(--tw-gradient-to-position);
-  --tw-gradient-to-position:  ;
-}
-.to-violet-400 {
-  --tw-gradient-to: #a78bfa var(--tw-gradient-to-position);
-  --tw-gradient-to-position:  ;
-}
-.to-white {
-  --tw-gradient-to: #ffffff var(--tw-gradient-to-position);
   --tw-gradient-to-position:  ;
 }
 .bg-contain {
@@ -3272,6 +3280,14 @@ select {
 .py-\[5px\] {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+.py-44 {
+  padding-top: 11rem;
+  padding-bottom: 11rem;
+}
+.py-40 {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 .pb-0 {
   padding-bottom: 0px;
@@ -4321,8 +4337,8 @@ div.card-body ul li::marker {
 }
 
 .swiper-pagination-bullet-active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(102 51 102 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(102 51 102 / var(--tw-bg-opacity)) !important;
 }
 
 .before\:pointer-events-none::before {

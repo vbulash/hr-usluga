@@ -117,5 +117,5 @@ div.card-body ul li::marker {
 }
 
 .swiper-pagination-bullet-active {
-	@apply bg-primary;
+	@apply bg-primary !important;
 }
