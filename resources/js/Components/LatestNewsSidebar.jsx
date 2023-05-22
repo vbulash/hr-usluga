@@ -1,5 +1,5 @@
 import React from 'react';
-import Calendar from '@/Components/Calendar';
+import PostCalendar from '@/Components/PostCalendar';
 import { Link } from '@inertiajs/react';
 
 export default class LatestNewsSidebar extends React.Component {
@@ -14,7 +14,7 @@ export default class LatestNewsSidebar extends React.Component {
 	render() {
 		return (
 			<>
-				<Calendar posts={this.props.posts} current={this.props.hasOwnProperty('current') ? this.props.current : null} />
+				<PostCalendar posts={this.props.posts} current={this.props.hasOwnProperty('current') ? this.props.current : null} />
 				<div className="mt-12 py-7 px-11 rounded-xl shadow-xl bg-gradient-to-r from-fuchsia-800 to-primary ">
 					<div className='mb-6 text-center text-xl font-bold text-white uppercase'>Свежие новости</div>
 					{

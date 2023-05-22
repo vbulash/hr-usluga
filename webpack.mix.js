@@ -20,6 +20,6 @@ mix
 		require('tailwindcss'),
 	])
 
-	.browserSync('https://hr-usluga.test')
+	.browserSync('http://localhost:8000')
 	.disableNotifications()
 	;

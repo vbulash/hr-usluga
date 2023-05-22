@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Pages\BodyController;
@@ -37,6 +38,11 @@ Route::get('/posts', function () {
 	return Inertia::render('Posts');
 })->name('posts.list');
 Route::get('/posts/{post}', [PostController::class, 'getPost'])->name('posts.get');
+
+Route::get('/events', function () {
+	return Inertia::render('Events');
+})->name('events.list');
+Route::get('/events/{event}', [EventController::class, 'getEvent'])->name('events.get');
 
 Route::get('/about', function () {
 	return Inertia::render('About');
