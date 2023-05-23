@@ -23,27 +23,29 @@ export default function Events() {
 						</div>
 						<h1 className='mb-11'>События</h1>
 
-						<FullCalendar
-							plugins={[dayGridPlugin]}
-							initialView="dayGridMonth"
-							// events={events}
-							eventClick={handleEventClick}
-							eventColor='#663366'
-							eventDisplay='block'
-							locales={[ruLocale]}
-							locale='ru'
-							contentHeight='auto'
-							headerToolbar={{
-								start: 'title',
-								center: 'prev,next,today',
-								end: 'dayGridMonth,dayGridWeek,dayGridDay'
-							}
-							}
-							showNonCurrentDates={false}
-							titleFormat={(date) => {
-								return `${['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'][date.date.month]} ${date.date.year} г.`;
-							}}
-						/>
+						<div className='calendar'>
+							<FullCalendar
+								plugins={[dayGridPlugin]}
+								initialView="dayGridMonth"
+								// events={events}
+								eventClick={handleEventClick}
+								eventColor='#663366'
+								eventDisplay='block'
+								locales={[ruLocale]}
+								locale='ru'
+								contentHeight='auto'
+								headerToolbar={{
+									start: 'title',
+									center: 'prev,next,today',
+									end: 'dayGridMonth,dayGridWeek,dayGridDay'
+								}
+								}
+								showNonCurrentDates={false}
+								titleFormat={(date) => {
+									return `${['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'][date.date.month]} ${date.date.year} г.`;
+								}}
+							/>
+						</div>
 					</div>
 				</div>
 			</section >

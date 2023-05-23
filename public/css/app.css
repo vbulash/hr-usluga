@@ -1099,12 +1099,6 @@ select {
 .col-span-5 {
   grid-column: span 5 / span 5;
 }
-.col-span-6 {
-  grid-column: span 6 / span 6;
-}
-.col-span-8 {
-  grid-column: span 8 / span 8;
-}
 .col-start-1 {
   grid-column-start: 1;
 }
@@ -1547,9 +1541,6 @@ select {
 .w-1\.5 {
   width: 0.375rem;
 }
-.w-1\/2 {
-  width: 50%;
-}
 .w-10 {
   width: 2.5rem;
 }
@@ -1970,9 +1961,6 @@ select {
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 .\!flex-row {
   flex-direction: row !important;
 }
@@ -2362,17 +2350,17 @@ select {
 .border-r-0 {
   border-right-width: 0px;
 }
-.border-t {
-  border-top-width: 1px;
-}
-.border-t-4 {
-  border-top-width: 4px;
-}
 .border-s-2 {
   border-inline-start-width: 2px;
 }
+.border-t {
+  border-top-width: 1px;
+}
 .border-t-2 {
   border-top-width: 2px;
+}
+.border-t-4 {
+  border-top-width: 4px;
 }
 .\!border-solid {
   border-style: solid !important;
@@ -2816,6 +2804,9 @@ select {
 .bg-\[linear-gradient\(180deg\2c _rgba\(208\2c _205\2c _225\2c _0\.5\)_-14\.24\%\2c _rgba\(255\2c _255\2c _255\2c _0\.5\)_124\.1\%\)\2c _linear-gradient\(180deg\2c _rgba\(208\2c _205\2c _225\2c _0\.5\)_-14\.24\%\2c _rgba\(255\2c _255\2c _255\2c _0\.5\)_124\.1\%\)\] {
   background-image: linear-gradient(180deg, rgba(208, 205, 225, 0.5) -14.24%, rgba(255, 255, 255, 0.5) 124.1%), linear-gradient(180deg, rgba(208, 205, 225, 0.5) -14.24%, rgba(255, 255, 255, 0.5) 124.1%);
 }
+.bg-\[linear-gradient\(89\.86deg\2c _\#D0CDE1_0\.14\%\2c _rgba\(255\2c _255\2c _255\2c _0\)_99\.9\%\)\] {
+  background-image: linear-gradient(89.86deg, #D0CDE1 0.14%, rgba(255, 255, 255, 0) 99.9%);
+}
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -2824,9 +2815,6 @@ select {
 }
 .bg-none {
   background-image: none;
-}
-.bg-\[linear-gradient\(89\.86deg\2c _\#D0CDE1_0\.14\%\2c _rgba\(255\2c _255\2c _255\2c _0\)_99\.9\%\)\] {
-  background-image: linear-gradient(89.86deg, #D0CDE1 0.14%, rgba(255, 255, 255, 0) 99.9%);
 }
 .from-blue-500 {
   --tw-gradient-from: #3b82f6 var(--tw-gradient-from-position);
@@ -3170,6 +3158,10 @@ select {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 .px-9 {
   padding-left: 2.25rem;
   padding-right: 2.25rem;
@@ -3277,10 +3269,6 @@ select {
 .py-\[5px\] {
   padding-top: 5px;
   padding-bottom: 5px;
-}
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 .pb-0 {
   padding-bottom: 0px;
@@ -4334,6 +4322,34 @@ div.card-body ul li::marker {
   background-color: rgb(102 51 102 / var(--tw-bg-opacity)) !important;
 }
 
+td.fc-day.fc-daygrid-day.fc-day-sat {
+    background-color: #D0CDE1;
+}
+
+td.fc-day.fc-daygrid-day.fc-day-sun {
+    background-color: #D0CDE1;
+}
+
+.calendar td.fc-day.fc-daygrid-day {
+  border-radius: 0.75rem;
+}
+
+.calendar table.fc-scrollgrid-sync-table {
+  border-collapse: separate;
+  --tw-border-spacing-x: 0.5rem;
+  --tw-border-spacing-y: 0.5rem;
+  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+}
+
+.calendar .fc .fc-daygrid-day-top {
+  padding-left: 0.75rem !important;
+  padding-top: 0.75rem !important;
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
+    display: flex;
+    flex-direction: row;
+}
+
 .before\:pointer-events-none::before {
   content: var(--tw-content);
   pointer-events: none;
@@ -4739,6 +4755,10 @@ div.card-body ul li::marker {
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-\[linear-gradient\(263\.72deg\2c _\#663366_5\.2\%\2c _rgba\(102\2c _51\2c _102\2c _0\.67\)_132\.31\%\)\]:hover {
+  background-image: linear-gradient(263.72deg, #663366 5.2%, rgba(102, 51, 102, 0.67) 132.31%);
+}
+
 .hover\:bg-gradient-to-bl:hover {
   background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
 }
@@ -4749,10 +4769,6 @@ div.card-body ul li::marker {
 
 .hover\:bg-gradient-to-l:hover {
   background-image: linear-gradient(to left, var(--tw-gradient-stops));
-}
-
-.hover\:bg-\[linear-gradient\(263\.72deg\2c _\#663366_5\.2\%\2c _rgba\(102\2c _51\2c _102\2c _0\.67\)_132\.31\%\)\]:hover {
-  background-image: linear-gradient(263.72deg, #663366 5.2%, rgba(102, 51, 102, 0.67) 132.31%);
 }
 
 .hover\:from-teal-200:hover {
@@ -5475,6 +5491,11 @@ div.card-body ul li::marker {
   width: 11px;
 }
 
+.group\/event-tile:hover .group-hover\/event-tile\:bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .group\/x:hover .group-hover\/x\:bg-\[\#999\] {
   --tw-bg-opacity: 1;
   background-color: rgb(153 153 153 / var(--tw-bg-opacity));
@@ -5552,11 +5573,6 @@ div.card-body ul li::marker {
 .group:hover .group-hover\:bg-yellow-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 240 138 / var(--tw-bg-opacity));
-}
-
-.group\/event-tile:hover .group-hover\/event-tile\:bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .group:hover .group-hover\:bg-opacity-0 {
@@ -7353,10 +7369,6 @@ div.card-body ul li::marker {
     grid-column: span 12 / span 12;
   }
 
-  .xs\:col-span-8 {
-    grid-column: span 8 / span 8;
-  }
-
   .xs\:my-3 {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
@@ -7450,10 +7462,6 @@ div.card-body ul li::marker {
       grid-column: span 10 / span 10;
     }
 
-    .xs\:max-xl\:col-span-8 {
-      grid-column: span 8 / span 8;
-    }
-
     .xs\:max-xl\:block {
       display: block;
     }
@@ -7532,16 +7540,12 @@ div.card-body ul li::marker {
     right: 1.5rem;
   }
 
-  .sm\:col-span-4 {
-    grid-column: span 4 / span 4;
-  }
-
-  .sm\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
   .sm\:col-span-12 {
     grid-column: span 12 / span 12;
+  }
+
+  .sm\:col-span-4 {
+    grid-column: span 4 / span 4;
   }
 
   .sm\:col-start-2 {
@@ -7682,10 +7686,6 @@ div.card-body ul li::marker {
     --tw-scale-x: .95;
     --tw-scale-y: .95;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .sm\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
   .sm\:grid-cols-2 {
@@ -7898,12 +7898,12 @@ div.card-body ul li::marker {
     max-width: 36rem;
   }
 
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:flex-row {
@@ -8006,20 +8006,20 @@ div.card-body ul li::marker {
 
 @media (min-width: 1024px) {
 
-  .lg\:col-span-7 {
-    grid-column: span 7 / span 7;
-  }
-
-  .lg\:col-span-9 {
-    grid-column: span 9 / span 9;
-  }
-
   .lg\:col-span-6 {
     grid-column: span 6 / span 6;
   }
 
+  .lg\:col-span-7 {
+    grid-column: span 7 / span 7;
+  }
+
   .lg\:col-span-8 {
     grid-column: span 8 / span 8;
+  }
+
+  .lg\:col-span-9 {
+    grid-column: span 9 / span 9;
   }
 
   .lg\:my-8 {
@@ -8101,12 +8101,12 @@ div.card-body ul li::marker {
     grid-column: span 5 / span 5;
   }
 
-  .xl\:col-span-7 {
-    grid-column: span 7 / span 7;
-  }
-
   .xl\:col-span-6 {
     grid-column: span 6 / span 6;
+  }
+
+  .xl\:col-span-7 {
+    grid-column: span 7 / span 7;
   }
 
   .xl\:col-start-9 {
@@ -8121,12 +8121,12 @@ div.card-body ul li::marker {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .xl\:bg-\[url\(\'\/assets\/images\/service-background\.png\'\)\] {
-    background-image: url('/assets/images/service-background.png');
-  }
-
   .xl\:bg-\[url\(\'\/assets\/images\/events-background\.png\'\)\] {
     background-image: url('/assets/images/events-background.png');
+  }
+
+  .xl\:bg-\[url\(\'\/assets\/images\/service-background\.png\'\)\] {
+    background-image: url('/assets/images/service-background.png');
   }
 }
 
@@ -8367,4 +8367,5 @@ div.card-body ul li::marker {
     fill: #ffffff;
   }
 }
+
 

@@ -119,3 +119,26 @@ div.card-body ul li::marker {
 .swiper-pagination-bullet-active {
 	@apply bg-primary !important;
 }
+
+td.fc-day.fc-daygrid-day.fc-day-sat {
+    background-color: #D0CDE1;
+}
+
+td.fc-day.fc-daygrid-day.fc-day-sun {
+    background-color: #D0CDE1;
+}
+
+.calendar td.fc-day.fc-daygrid-day {
+    @apply rounded-xl;
+}
+
+.calendar table.fc-scrollgrid-sync-table {
+	@apply border-separate border-spacing-2;
+}
+
+.calendar .fc .fc-daygrid-day-top {
+	@apply pl-3 pt-3 text-2xl !important;
+    display: flex;
+    flex-direction: row;
+}
+
