@@ -27,6 +27,16 @@ export default function Events() {
 							plugins={[dayGridPlugin]}
 							initialView="dayGridMonth"
 							// events={events}
+							events={[
+								{
+								  title: 'Event1',
+								  start: '2023-04-04'
+								},
+								{
+								  title: 'Event2',
+								  start: '2023-05-05'
+								}
+							]}
 							eventClick={handleEventClick}
 							eventColor='#663366'
 							eventDisplay='block'
