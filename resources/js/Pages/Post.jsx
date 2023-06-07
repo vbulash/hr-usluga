@@ -40,8 +40,8 @@ export default function Post({ post }) {
 				<div className="grid grid-cols-12">
 					<div className="col-start-2 col-span-10">
 						<div className='text-lg uppercase hover:text-primary'>
-							<a href={route('home')}>Главная</a> /
-							<a href={route('posts.list')}>Новости</a> /
+							<a href={route('home')}>Главная</a> /&nbsp;
+							<a href={route('posts.list')}>Новости</a> /&nbsp;
 							{post.title}
 						</div>
 						<h1 className='mb-11'>Новости</h1>

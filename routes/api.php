@@ -30,6 +30,7 @@ Route::post('/feedback', [ContactsController::class, 'send']);
 Route::post('/testimonials', [TestimonialController::class, 'getTestimonials']);
 
 Route::post('/events.digest', [EventController::class, 'getDigest']);
+Route::post('/events', [EventController::class, 'getEvents']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 	return $request->user();
